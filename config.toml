@@ -1,3 +1,4 @@
+baseURL = 'https://bcu.zspzd-technikum.pl/'
 theme = "theme1"
 [module]
 [module.hugoVersion]
