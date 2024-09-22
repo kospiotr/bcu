@@ -1,4 +1,4 @@
-
+theme = "theme1"
 [module]
 [module.hugoVersion]
 # We use hugo.Deps to list dependencies, which was added in Hugo 0.92.0
