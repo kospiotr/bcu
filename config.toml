@@ -1,9 +1,35 @@
+Title = "BCUwDTW ZSPZD"
+
 baseURL = 'https://bcu.zspzd-technikum.pl/'
 theme = "theme1"
+languageCode = 'pl-pl'
+
+[params]
+subtitle1 = "Branżowe Centrum Umiejętności w dziedzinie Technika Weterynaryjna"
+subtitle2 = "W Zespole Szkół Centrum Kształcenia Rolniczego"
+subtitle3 = "Imienia Jadwigi Dziubińskiej"
+subtitle4 = "w Zduńskiej Dąbrowie"
+
 [module]
 [module.hugoVersion]
-# We use hugo.Deps to list dependencies, which was added in Hugo 0.92.0
 min = "0.92.0"
 
 [[module.imports]]
 path="github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
+
+[menu]
+[[menu.main]]
+identifier = "home"
+name = "Home"
+url = "/"
+weight = 10
+[[menu.main]]
+identifier = "about"
+name = "About"
+url = "/about/"
+weight = 20
+[[menu.main]]
+identifier = "services"
+name = "Services"
+url = "/services/"
+weight = 30

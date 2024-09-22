@@ -1,12 +1,11 @@
-{{- with resources.Get "js/main.js" }}
-  {{- if eq hugo.Environment "development" }}
-    {{- with . | js.Build }}
-      <script src="{{ .RelPermalink }}"></script>
-    {{- end }}
-  {{- else }}
-    {{- $opts := dict "minify" true }}
-    {{- with . | js.Build $opts | fingerprint }}
-      <script src="{{ .RelPermalink }}" integrity="{{- .Data.Integrity }}" crossorigin="anonymous"></script>
-    {{- end }}
-  {{- end }}
-{{- end }}
+{{/* Load Bootstrap JS. */}}
+{{- $js := resources.Get "js/index.js" -}}
+{{- $params := dict -}}
+{{- $sourceMap := cond hugo.IsProduction "" "inline" -}}
+{{- $opts := dict "sourceMap" $sourceMap "minify" hugo.IsProduction "target" "es2018" "params" $params -}}
+{{- $js = $js | js.Build $opts -}}
+{{- if hugo.IsProduction -}}
+{{- $js = $js | fingerprint -}}
+{{- end -}}
+<script src="{{ $js.RelPermalink }}" {{ if hugo.IsProduction }}integrity="{{ $js.Data.Integrity }}"{{ end }} defer></script>
+<script src="http://cdn.dashjs.org/latest/dash.all.min.js"></script>

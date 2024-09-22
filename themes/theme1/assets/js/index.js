@@ -1,22 +1,19 @@
-// Import the Bootstrap components we want to use.
-// See https://github.com/twbs/bootstrap/blob/main/js/index.umd.js
 import Toast from "js/bootstrap/src/toast";
 import Popover from "js/bootstrap/src/popover";
 
-(function () {
-  let toastElList = [].slice.call(document.querySelectorAll(".toast"));
-  let toastList = toastElList.map(function (toastEl) {
-    return new Toast(toastEl);
+document.addEventListener("DOMContentLoaded", function(){
+  window.addEventListener('scroll', function() {
+    let navbar_top = document.getElementById('navbar_top');
+    let navbar_height = navbar_top.offsetHeight;
+    let classList = navbar_top.classList;
+    if (window.scrollY <= navbar_top.offsetHeight) {
+      classList.remove("shadow");
+      classList.remove('bg-primary');
+//      document.body.style.paddingTop = '0';
+    } else {
+      classList.add("shadow");
+      classList.add('bg-primary');
+//      document.body.style.paddingTop = navbar_height + 'px';
+    }
   });
-
-  toastList.forEach(function (toast) {
-    toast.show();
-  });
-
-  let popoverTriggerList = [].slice.call(
-    document.querySelectorAll('[data-bs-toggle="popover"]')
-  );
-  popoverTriggerList.map(function (popoverTriggerEl) {
-    return new Popover(popoverTriggerEl);
-  });
-})();
+});
