@@ -1,5 +1,6 @@
 import Toast from "js/bootstrap/src/toast";
 import Popover from "js/bootstrap/src/popover";
+import Collapse from "js/bootstrap/src/collapse";
 
 document.addEventListener("DOMContentLoaded", function(){
     let navbar_top = document.getElementById('navbar_top');
@@ -20,4 +21,6 @@ document.addEventListener("DOMContentLoaded", function(){
     }else{
         document.body.style.paddingTop = navbar_height + 'px';
     }
+
+    new Collapse(document.getElementById('navbar_toggler'), {})
 });

@@ -13,7 +13,6 @@ nav_class = "responsive"
 <img src="/images/investors_logos.png" class="text-center img-fluid col-12 col-xl-8">
 </div>
 {{< content-with-image title="Krajowy Program Odbudowy (KPO)" img-url="https://www.kpo.gov.pl/media/137087/Znak_KPO_Poziom_logo_serwisu-003.jpg" >}}
-
 To kompleksowy plan, opracowany przez polski rząd, mający na celu odbudowę gospodarki po kryzysie wywołanym pandemią COVID-19. KPO stanowi część unijnego mechanizmu Next Generation EU, który ma wspierać państwa członkowskie w łagodzeniu skutków pandemii. Polska, jako jeden z beneficjentów, otrzyma znaczące fundusze, które mają być przeznaczone na inwestycje w kluczowe obszary, takie jak transformacja cyfrowa, zielona energia, infrastruktura, edukacja i zdrowie.
 
 Program koncentruje się na pięciu głównych filarach: odporności gospodarki, transformacji energetycznej, cyfryzacji, ochronie zdrowia oraz zwiększaniu spójności społecznej i terytorialnej. Inwestycje te mają przyczynić się do tworzenia nowych miejsc pracy, zwiększenia konkurencyjności polskiej gospodarki oraz dostosowania jej do wyzwań związanych z transformacją ekologiczną i cyfrową. Ważnym aspektem KPO jest także wspieranie innowacyjnych projektów, które wzmocnią pozycję Polski na arenie międzynarodowej.
@@ -22,7 +21,6 @@ KPO przewiduje również inwestycje w edukację i szkolnictwo zawodowe, aby zwi�
 {{< /content-with-image >}}
 
 {{< content-with-image title="Branżowe Centrum Umiejętności w dziedzinie Technika Weterynaryjna w Zespole Szkół Centrum Kształcenia Rolniczego Imienia Jadwigi Dziubińskiej" img-url="https://zspzd-technikum.pl/wp-content/uploads/2018/03/logo-300x300.png" img-location="right">}}
-
 Branżowe Centrum Umiejętności w dziedzinie Technika Weterynaryjna w Zespole Szkół Centrum Kształcenia Rolniczego imienia Jadwigi Dziubińskiej w Zduńskiej Dąbrowie to nowoczesna placówka edukacyjna, która ma na celu podnoszenie kwalifikacji w obszarze weterynarii i szeroko pojętej opieki nad zwierzętami. Inwestycja ta została zrealizowana w ramach Krajowego Programu Odbudowy (KPO), który wspiera rozwój kompetencji branżowych w różnych sektorach gospodarki. Centrum wyposażone jest w nowoczesne laboratoria, sprzęt diagnostyczny oraz sale dydaktyczne, umożliwiające uczniom i kursantom zdobycie zarówno teoretycznej, jak i praktycznej wiedzy na najwyższym poziomie.
 
 Jednym z kluczowych celów Branżowego Centrum Umiejętności jest kształcenie przyszłych techników weterynaryjnych, którzy będą mogli z powodzeniem podejmować pracę w sektorze rolnym, a także w placówkach weterynaryjnych. Program edukacyjny został opracowany z myślą o dostosowaniu do wymogów rynku pracy, co ma pomóc absolwentom w szybkim znalezieniu zatrudnienia. Centrum oferuje szeroki wachlarz kursów i szkoleń, zarówno dla młodzieży, jak i osób dorosłych, które mają na celu zwiększenie umiejętności praktycznych i teoretycznych w weterynarii.
