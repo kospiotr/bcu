@@ -30,7 +30,7 @@ Jednym z kluczowych celów Branżowego Centrum Umiejętności jest kształcenie 
 
 {{< /container >}}
 
-{{< container class="bg-primary" id="location" title="Lokalizacja">}}
+{{< container class="bg-primary" title-class="text-white" id="location" title="Lokalizacja">}}
 <div class="row justify-content-center">
 <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d1293.602198773173!2d19.79217822718766!3d52.14649126411444!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e1!3m2!1spl!2spl!4v1727096835268!5m2!1spl!2spl" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="row justify-content-center"></iframe>
 </div>
