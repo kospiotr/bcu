@@ -9,9 +9,9 @@ nav_class = "responsive"
 {{< hero />}}
 
 {{< container class="bg-white" id="project" title="O Projekcie" >}}
-
-<img src="/images/investors_logos.png" class="text-center img-fluid">
-
+<div class="row justify-content-center">
+<img src="/images/investors_logos.png" class="text-center img-fluid col-12 col-xl-8">
+</div>
 {{< content-with-image title="Krajowy Program Odbudowy (KPO)" img-url="https://www.kpo.gov.pl/media/137087/Znak_KPO_Poziom_logo_serwisu-003.jpg" >}}
 
 To kompleksowy plan, opracowany przez polski rząd, mający na celu odbudowę gospodarki po kryzysie wywołanym pandemią COVID-19. KPO stanowi część unijnego mechanizmu Next Generation EU, który ma wspierać państwa członkowskie w łagodzeniu skutków pandemii. Polska, jako jeden z beneficjentów, otrzyma znaczące fundusze, które mają być przeznaczone na inwestycje w kluczowe obszary, takie jak transformacja cyfrowa, zielona energia, infrastruktura, edukacja i zdrowie.
