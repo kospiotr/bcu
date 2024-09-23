@@ -47,7 +47,10 @@ main{
     }
 }
 #navbarNav.show{
-    @extend .bg-primary;
+    > .navbar-nav{
+        @extend .bg-primary;
+        @extend .p-5;
+    }
 }
 
 #hero{
