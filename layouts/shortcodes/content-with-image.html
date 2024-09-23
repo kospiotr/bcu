@@ -1,0 +1,30 @@
+<div class="row g-8 align-items-center pt-5">
+    {{ $location := default "left" (.Get "img-location") }}
+
+    {{ if eq $location "left"}}
+    <div class="col-lg-3 d-flex justify-content-center p-2">
+        <img class="img-fluid text-center" src="{{ .Get "img-url"}}"/>
+    </div>
+    {{ end }}
+    <div class="col-lg-9">
+        <h2 class="mb-4">
+            {{ .Get "title" }}
+        </h2>
+        <div class="row g-3 mb-4">
+            <div class="col-12 d-flex">
+                <div class="flex-shrink-0 btn-lg-square rounded-circle bg-primary">
+                    <i class="fa fa-user-tie text-white"></i>
+                </div>
+                <div class="ms-4">
+                    {{ .Inner | markdownify }}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    {{ if eq $location "right"}}
+    <div class="col-lg-3 d-flex justify-content-center  p-2">
+        <img class="img-fluid" src="{{ .Get "img-url"}}"/>
+    </div>
+    {{ end }}
+</div>

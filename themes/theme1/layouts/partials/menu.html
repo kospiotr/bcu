@@ -2,8 +2,8 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="navbar_top" class="navbar navbar-dark fixed-top navbar-expand-md px-5">
-      <a class="navbar-brand" href="#">{{ site.Title }}</a>
+  <nav id="navbar_top" class="{{ $page.Param "nav_class" }}">
+      <a class="navbar-brand" href="/">{{ site.Title }}</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,7 +24,7 @@
     {{- else if $page.HasMenuCurrent .Menu .}}
       {{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "true") }}
     {{- else }}
-      {{- $attrs = merge $attrs (dict "class" "nav-link") }}
+      {{- $attrs = merge $attrs (dict "class" "nav-link test") }}
     {{- end }}
     {{- $name := .Name }}
     {{- with .Identifier }}

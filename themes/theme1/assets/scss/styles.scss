@@ -12,23 +12,50 @@ $theme-colors: (
 html,body {
   margin: 0;
   padding: 0;
-}
+  scroll-padding-top: 88px;
+  @extend .d-flex;
+  @extend .flex-column;
+  @extend .h-100;
 
+
+}
+main{
+//     min-height: 100vh;
+}
 #navbar_top{
     transition: 0.8s;
     -webkit-transition:  0.8s;
+    @extend .navbar;
+    @extend .fixed-top;
+    @extend .navbar-dark;
+    @extend .bg-primary;
+    @extend .navbar-expand-md;
+    @extend .px-5;
+    @extend .shadow;
+
+    &.responsive{
+        &.before-scroll{
+            @extend .p-5;
+            background-color: transparent !important;
+            @extend .shadow-none;
+//             padding: 50px 150px 150px 150px !important;
+            font-size: 25px;
+            > .navbar-brand{
+                visibility: hidden;
+            }
+        }
+    }
 }
 
 #hero{
     @extend .text-white;
     @extend .container-fluid;
 
-    background: $primary;
+//     background: $primary;
     height: 100vh;
     padding: 0;
     position: relative;
     > .overly{
-        position: absolute;
         @extend .d-flex;
         @extend .flex-column;
         justify-content: center;
@@ -36,18 +63,19 @@ html,body {
         padding: 0;
         margin: 0;
         height: 100vh;
-        z-index: 10;
-        > .gallery{
+        z-index: 1;
+
+        > .gallery {
+            @extend .row;
             @extend .p-5;
-            @extend .m-0;
-
+            margin: 0;
             > img{
+                @extend .p-1;
+                @extend .p-md-2;
+                @extend .col-6;
+                @extend .col-md-3;
                 @extend .rounded-5;
-                box-shadow: $box_shadow;
-                padding-right: 0;
-                padding-left: 20px;
-                margin-top: 20px;
-
+                object-fit: cover;
             }
         }
     }
@@ -57,8 +85,8 @@ html,body {
         margin: 0;
         right: 0;
         bottom: 0;
-        filter: url('#purple-warm');
-        filter: opacity(0.5);
+//         opacity: 0.5;
+        z-index: -1;
     }
 }
 
@@ -78,4 +106,8 @@ html,body {
 
 .overly{
 
+}
+
+.footer{
+        align-self: center;
 }

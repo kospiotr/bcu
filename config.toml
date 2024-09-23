@@ -20,17 +20,22 @@ path="github.com/gohugoio/hugo-mod-bootstrap-scss/v5"
 
 [menu]
 [[menu.main]]
-identifier = "home"
-name = "Home"
-url = "/"
+identifier = "project"
+name = "Projekt"
+url  = "/#project"
 weight = 10
 [[menu.main]]
-identifier = "about"
-name = "About"
-url = "/about/"
+identifier = "location"
+name = "Lokalizacja"
+url  = "/#location"
 weight = 20
 [[menu.main]]
-identifier = "services"
-name = "Services"
-url = "/services/"
+identifier = "contact"
+name = "Kontakt"
+url  = "/#contact"
 weight = 30
+[[menu.main]]
+identifier = "news"
+name = "Aktualności"
+pageref  = "/posts/"
+weight = 40
