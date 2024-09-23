@@ -1,12 +1,7 @@
 <h2>Wyślij wiadomość</h2>
-<form action="mailto:szkola@zspzd-technikum.pl" method="get" enctype="text/plain">
-    <div class="form-group">
-        <label for="exampleFormControlInput1">Temat</label>
-        <input type="text" class="form-control" id="exampleFormControlInput1" name="subject"  placeholder="Enter topic">
-    </div>
-    <div class="form-group">
-        <label for="exampleFormControlTextarea1">Wiadomość</label>
-        <textarea class="form-control" name="body"  id="exampleFormControlTextarea1" rows="3"></textarea>
-    </div>
-    <button type="submit" class="btn btn-primary">Wyślij</button>
+<form action="mailto:szkola@zspzd-technikum.pl" method="get" enctype="text/plain" class="d-flex flex-column gap-2">
+    <input type="text" class="form-control" id="exampleFormControlInput1" name="subject" placeholder="Temat">
+    <textarea class="form-control" name="body" id="exampleFormControlTextarea1" rows="3"
+              placeholder="Wiadomość"></textarea>
+    <button type="submit" class="btn btn-primary align-self-center text-white">Wyślij</button>
 </form>
