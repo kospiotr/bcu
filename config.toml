@@ -5,10 +5,11 @@ theme = "theme1"
 languageCode = 'pl-pl'
 
 [params]
-subtitle1 = "Branżowe Centrum Umiejętności w dziedzinie Technika Weterynaryjna"
-subtitle2 = "W Zespole Szkół Centrum Kształcenia Rolniczego"
-subtitle3 = "Imienia Jadwigi Dziubińskiej"
-subtitle4 = "w Zduńskiej Dąbrowie"
+subtitle1 = "Branżowe Centrum Umiejętności"
+subtitle2 = "w dziedzinie Technika Weterynaryjna"
+subtitle3 = "w Zespole Szkół Centrum Kształcenia Rolniczego"
+subtitle4 = "Imienia Jadwigi Dziubińskiej"
+subtitle5 = "w Zduńskiej Dąbrowie"
 
 [module]
 [module.hugoVersion]

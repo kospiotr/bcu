@@ -1,5 +1,6 @@
-$primary: rgb(172, 130, 67);
+$primary: #009a6b;
 $danger: #ff4136;
+$box_shadow: 1rem 1rem 2rem -5px rgba(0, 0, 0, 0.32);
 
 $theme-colors: (
   "primary": $primary,
@@ -19,33 +20,62 @@ html,body {
 }
 
 #hero{
+    @extend .text-white;
+    @extend .container-fluid;
+
     background: $primary;
     height: 100vh;
-//     position: relative;
-//     height: 100vh;
-    > video{
-//         width: 100%;
-//         z-index: -1;
-        position: absolute;
-        right: 0;
-        bottom: 0;
-//
-
-        filter: url('#purple-warm');
-        filter: opacity(0.5);
-
-    }
+    padding: 0;
+    position: relative;
     > .overly{
         position: absolute;
+        @extend .d-flex;
+        @extend .flex-column;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+        margin: 0;
+        height: 100vh;
         z-index: 10;
-//         background: $primary;
+        > .gallery{
+            @extend .p-5;
+            @extend .m-0;
+
+            > img{
+                @extend .rounded-5;
+                box-shadow: $box_shadow;
+                padding-right: 0;
+                padding-left: 20px;
+                margin-top: 20px;
+
+            }
+        }
+    }
+    > .cover{
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        right: 0;
+        bottom: 0;
+        filter: url('#purple-warm');
+        filter: opacity(0.5);
     }
 }
 
 .navbar-brand{
 //     margin-bottom: -36px;
-    background-color: $primary;
-    align-self: baseline;
-    margin-left: 10px;
-    padding: 15px;
+//     background-color: $primary;
+//     align-self: baseline;
+//     margin-left: 10px;
+//     padding: 15px;
+}
+
+.cover{
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+}
+
+.overly{
+
 }
