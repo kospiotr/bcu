@@ -10,7 +10,7 @@ nav_class = "responsive"
 
 {{< container class="bg-white" id="project" title="O Projekcie" >}}
 
-{{< figure src="/images/investors_logos.png" class="text-center img-fluid">}}
+<img src="/images/investors_logos.png" class="text-center img-fluid">
 
 {{< content-with-image title="Krajowy Program Odbudowy (KPO)" img-url="https://www.kpo.gov.pl/media/137087/Znak_KPO_Poziom_logo_serwisu-003.jpg" >}}
 
