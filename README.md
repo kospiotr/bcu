@@ -1,7 +1,6 @@
 # pkosmowski.pl
 
 # Prerequisites
-
 - IDE
 - Git
 - Docker
