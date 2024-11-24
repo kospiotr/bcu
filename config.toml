@@ -1,7 +1,7 @@
 Title = "BCUwDTW ZSPZD"
 
 baseURL = 'https://bcu.zspzd-technikum.pl/'
-theme = "theme1"
+theme = "main"
 languageCode = 'pl-pl'
 
 [params]
