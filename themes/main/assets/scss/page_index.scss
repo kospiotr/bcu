@@ -1,0 +1,139 @@
+#hero{
+    @extend .container-fluid;
+    background: $primary;
+    padding-top: 130px; // for respecting navbnar size
+    @extend .pb-5;
+    position: relative; // for background-video adjust to the hero size
+    //     @extend .pb-5;
+
+    > .overly-content{
+        z-index: 10; // for bringing the content in front of the video-background
+        position: relative; // for bringing the content in front of the video-background
+    }
+    > .overly-background{
+        position: absolute;
+        padding: 0;
+        margin: 0;
+        right: 0;
+        bottom: 0;
+        opacity: 0.5;
+        z-index: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+    }
+
+    > .container{
+        > .row{
+            place-content: center;
+            align-items: center;
+
+            .logos{
+                @extend .col-12;
+                @extend .col-xl;
+                @extend .text-white;
+                @extend .text-center;
+                @extend .pb-5;
+
+                img {
+                    @extend .pt-5;
+                }
+            }
+
+            .splasher{
+                width: 280px;
+                height: 560px;
+                @extend .row;
+                @include media-breakpoint-up(md) {
+                    width: 700px;
+                }
+
+                > *{
+                    height: 280px;
+                    padding: 0;
+                    @extend .position-relative;
+                    @include media-breakpoint-up(md) {
+                        width: 50%;
+                    }
+
+                    // green
+                    &:nth-child(1){
+                        text-align: right;
+                        > .bullets{
+                            position: absolute;
+                            top: 0;
+                            left: 0;
+
+                            .pill{
+                                @extend .rounded;
+                            }
+                        }
+                    }
+
+                    // orange
+                    &:nth-child(2){
+                        @extend .d-none;
+                        @extend .d-md-block;
+                        > svg{
+                            @extend .position-absolute;
+                            @extend .bottom-0;
+                            @extend .start-50;
+                            @extend .translate-middle-x;
+                        }
+                        > img{
+                            @extend .position-absolute;
+                            @extend .bottom-0;
+                            @extend .end-0;
+                        }
+                    }
+
+                    // purple
+                    &:nth-child(3){
+                        @extend .d-none;
+                        @extend .d-md-block;
+                        > svg{
+                            @extend .position-absolute;
+                            @extend .bottom-0;
+                            @extend .end-0;
+            //                 @extend .translate-middle-x;
+                        }
+                        > img{
+                            @extend .position-absolute;
+                            @extend .bottom-0;
+                            @extend .end-0;
+                        }
+                    }
+
+                    // red
+                    &:nth-child(4){
+                        > svg{
+                            @extend .position-absolute;
+                            @extend .top-50;
+                            @extend .start-50;
+                            @extend .translate-middle;
+                        }
+                        > .pill{
+                            @extend .position-absolute;
+                            @extend .bottom-50;
+                            @extend .end-0;
+                            @extend .rounded;
+                        }
+                    }
+
+                }
+
+                .rounded{
+                    @extend .rounded-4;
+                    @extend .m-1;
+                    margin-bottom: 8px;
+                    padding: 8px 16px;
+                    @extend .bg-white;
+                    @extend .text-black;
+                    text-align: left;
+                }
+            }
+        }
+    }
+
+}
+

@@ -4,26 +4,22 @@ nav_class = "responsive"
 +++
 
 <div id="hero">
-    <div class="overly intro">
-        <div class="wrapper-left">
-            <div class="text">
+    <div class="overly-content container">
+        <div class="row">
+            <div class="logos">
                 <h2>{{< param "subtitle1" >}}</h2>
                 <h3>{{< param "subtitle2" >}}</h3>
                 <h5>{{< param "subtitle3" >}}</h5>
                 <h5>{{< param "subtitle4" >}}</h5>
-                <div class="logos">
-                    {{< img src="images/bcu_logo_vertical.png" size="400x" class="img-fluid" >}}
-                    {{< img src="images/investors_logos.png" size="600x" class="img-fluid" >}}
-                </div>
+                {{< img src="images/bcu_logo_vertical.png" size="400x" class="img-fluid" >}}
+                {{< img src="images/investors_logos.png" size="600x" class="img-fluid" >}}
             </div>
-        </div>
-        <div class="wrapper-right">
-            <div class="launcher">
+            <div class="splasher">
                 <div>
-                    <div class="position-absolute">
+                    <div class="bullets">
                         <div class="pill">
                             {{< svg-inline src="images/pill-1.svg" >}}
-                            <span >Doświadczeni instruktorzy</span>
+                            <span>Doświadczeni instruktorzy</span>
                         </div>
                         <div class="pill">
                             {{< svg-inline src="images/pill-2.svg" >}}
@@ -34,50 +30,34 @@ nav_class = "responsive"
                             <span>Wspierające środowisko</span>
                         </div>
                     </div>
-                    <div
-                    >
                     {{< svg-inline src="images/fill-1.svg" >}}
-                    </div>
                 </div>
-                <div class="position-relative">
+                <div>
                     {{< svg-inline src="images/fill-2.svg" >}}
-                    <div class="d-flex justify-content-center">
-                        <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/landing-immigration/college-student-holding-laptop-pointing-right.png" alt="" class="position-absolute bottom-0 me-8">                    </div>
+                    <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/landing-immigration/college-student-holding-laptop-pointing-right.png"
+                         alt="">
                 </div>
-                <div class="position-relative">
+                <div>
                     {{< svg-inline src="images/fill-3.svg" >}}
-                    <div class="position-absolute">
-                        <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/landing-immigration/front-view-young-man-going-university-with-bag.png" alt="" class="position-absolute bottom-0">
-                    </div>
+                    <img src="https://codescandy.com/geeks-bootstrap-5/assets/images/landing-immigration/front-view-young-man-going-university-with-bag.png"
+                         alt="" class="">
                 </div>
-                <div class="position-relative">
-                    <div class="position-absolute bottom-50 end-0">
-                        <div class="rounded">
-                            {{< svg-inline src="images/pill-4.svg" >}}
-                            <span>Uczestnicy</span>
-                            <div>1000+ do 2030 roku</div>
-                        </div>
-                    </div>
-                    <div class="pt-4">
+                <div>
                     {{< svg-inline src="images/fill-4.svg" >}}
+                    <div class="pill">
+                        {{< svg-inline src="images/pill-4.svg" >}}
+                        <span>Uczestnicy</span>
+                        <div>1000+ do 2030 roku</div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-    <!--        <div class="gallery">-->
-    <!--            <img src="/images/img1.png" alt="">-->
-    <!--            <img src="/images/img2.png" alt="">-->
-    <!--            <img src="/images/img3.png" alt="">-->
-    <!--            <img src="/images/img4.png" alt="">-->
-    <!--        </div>-->
-    <!--    </div>-->
-
     <video data-dashjs-player crossorigin="anonymous"
            preload="metadata"
            disablepictureinpicture=""
            autoplay="autoplay" muted loop playsinline
-           class="background-video"
+           class="overly-background"
     >
         <source src="/videos/hero2/video.mpd" type="application/dash+xml">
     </video>
