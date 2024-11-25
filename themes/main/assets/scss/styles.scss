@@ -59,7 +59,7 @@ main{
     @extend .container-fluid;
 
     background: $primary;
-    padding-top: 180px; // for respecting navbnar size
+    padding-top: 130px; // for respecting navbnar size
     position: relative; // for background-video adjust to the hero size
     @extend .pb-5;
 
@@ -167,23 +167,40 @@ main{
 }
 
 .launcher{
-    width: 250px;
+    width: 280px;
     @include media-breakpoint-up(md) {
-        width: 500px;
+        width: 600px;
     }
     @extend .row;
 //     @extend .border;
-    @extend .g-0;
+//     @extend .g-0;
     > *{
+        height: 280px;
+        padding: 0;
+        box-sizing: border-box;
+        align-self: center;
+//         @extend .border;
+//         @extend .p-2;
+//         @extend .p-md-0;
+//         @extend .g-3;
         @include media-breakpoint-up(md) {
             width: 50%;
         }
-        @extend .p-2;
-        @extend .p-md-0;
-        @extend .g-3;
-        box-sizing: border-box;
+
+    &:nth-child(1){
 //         @extend .border;
-        align-self: stretch;
+        text-align: right;
+    }
+    &:nth-child(2){
+//         @extend .border;
+        align-content: end;
+        text-align: right;
+    }
+    &:nth-child(3){
+//         @extend .border;
+        align-content: end;
+//         text-align: center;
+    }
 
     }
 }
