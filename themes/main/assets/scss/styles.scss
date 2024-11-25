@@ -69,6 +69,7 @@ main{
     }
 
     > .intro{
+//         @extend .container;
         @extend .row;
 
 //         @extend .g-5;
@@ -76,35 +77,28 @@ main{
             margin: 0;
             @extend .col-12;
             @extend .col-xl;
-            @extend .p-xl-5;
+//             @extend .p-xl-5;
             align-content: center;
             text-align: center;
             place-items: center;
-            justify-items: center
-
-//             @extend .row;
-//             @extend .w-100;
-
-//             @extend .text-center;
-//             @extend .border;
-        }
-        > .wrapper-left{
-            @include media-breakpoint-up(xl) {
-//                 text-align: right;
-            }
+            justify-items: center;
         }
         > .wrapper-right{
             @include media-breakpoint-up(xxl) {
-                place-items: start;
-            } }
+//                 place-items: start;
+            }
+        }
 
         .text{
-            justify-items: center;
             @extend .py-5;
-            > img{
-                @extend .mt-5;
-                display: block;
-
+            > .logos {
+                display: flex;
+                flex-wrap: wrap;
+                flex-direction: column;
+                align-items: center;
+                > img{
+                    @extend .mt-5;
+                }
             }
         }
 
