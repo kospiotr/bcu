@@ -1,0 +1,11 @@
+{{- $id := .Get "id" | safeHTML -}}
+{{- $url := $id | printf "https://www.google.com/maps/embed?%s" -}}
+<iframe src="{{ $url }}"
+        width="{{ .Get "width" | default "300px" }}"
+        height="{{ .Get "height" | default "400px" }}"
+        style="border:0;" allowfullscreen=""
+        loading="lazy"
+        referrerpolicy="no-referrer-when-downgrade"></iframe>
+{{ if strings.ContainsNonSpace .Inner }}
+Inner is not empty
+{{ end }}

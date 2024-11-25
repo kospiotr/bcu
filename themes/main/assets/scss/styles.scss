@@ -1,5 +1,6 @@
 $primary: #009a6b;
 $danger: #ff4136;
+// $dark: #cccccc;
 $box_shadow: 1rem 1rem 2rem -5px rgba(0, 0, 0, 0.32);
 
 $theme-colors: (
@@ -58,35 +59,61 @@ main{
     @extend .container-fluid;
 
     background: $primary;
-    height: 100vh;
-    padding: 0;
-    position: relative;
-    > .overly{
-        @extend .d-flex;
-        @extend .flex-column;
-        justify-content: center;
-        align-items: center;
-        padding: 0;
-        margin: 0;
-        height: 100vh;
-        z-index: 10;
-        position: absolute;
+    padding-top: 180px; // for respecting navbnar size
+    position: relative; // for background-video adjust to the hero size
+    @extend .pb-5;
 
-        > .gallery {
-            @extend .row;
-            @extend .p-5;
+    > .overly{
+        z-index: 10; // for bringing the content in front of the video-background
+        position: relative; // for bringing the content in front of the video-background
+    }
+
+    > .intro{
+        @extend .row;
+
+//         @extend .g-5;
+        > * {
             margin: 0;
-            > img{
-                @extend .p-1;
-                @extend .p-md-2;
-                @extend .col-6;
-                @extend .col-md-3;
-                @extend .rounded-5;
-                object-fit: cover;
+            @extend .col-12;
+            @extend .col-xl;
+            @extend .p-xl-5;
+            align-content: center;
+            text-align: center;
+            place-items: center;
+//             @extend .row;
+//             @extend .w-100;
+
+//             @extend .text-center;
+//             @extend .border;
+        }
+        > .wrapper-left{
+            @include media-breakpoint-up(xl) {
+                text-align: right;
             }
         }
+        > .wrapper-right{
+            @include media-breakpoint-up(xl) {
+                place-items: start;
+            }
+        }
+
+        .text{
+            @extend .text-center;
+//             @extend .py-5;
+            display: inline-block;
+            ul {
+                display: inline-block;
+                justify-items: left;
+                list-style: none;
+                padding: 0;
+                > li:before {
+                    content: '✓ ';
+                }
+            }
+        }
+
     }
-    > .cover{
+    > .background-video{
         position: absolute;
         padding: 0;
         margin: 0;
@@ -94,6 +121,9 @@ main{
         bottom: 0;
         opacity: 0.5;
         z-index: 1;
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
     }
 }
 
@@ -117,4 +147,63 @@ main{
 
 .footer{
         align-self: center;
+}
+//
+
+
+.bg-1{
+    background-color: #754ffe!important;
+}
+.bg-2{
+    background-color: #f59e0b !important;
+}
+
+.text-dark{
+}
+
+
+.offer{
+
+}
+
+.launcher{
+    width: 250px;
+    @include media-breakpoint-up(md) {
+        width: 500px;
+    }
+    @extend .row;
+//     @extend .border;
+    @extend .g-0;
+    > *{
+        @include media-breakpoint-up(md) {
+            width: 50%;
+        }
+        @extend .p-2;
+        @extend .p-md-0;
+        @extend .g-3;
+        box-sizing: border-box;
+//         @extend .border;
+        align-self: stretch;
+
+    }
+}
+
+.pill{
+    @extend .rounded-pill;
+    @extend .m-1;
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    @extend .bg-white;
+    @extend .text-black;
+    text-align: left;
+}
+
+.rounded{
+   @extend .rounded-4;
+    @extend .m-1;
+    margin-bottom: 8px;
+    padding: 8px 16px;
+    @extend .bg-white;
+    @extend .text-black;
+    text-align: left;
 }

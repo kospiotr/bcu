@@ -1,0 +1,5 @@
+{{$src := .Get "src"}}
+
+{{ with resources.Get $src }}
+{{ .Content | safeHTML }}
+{{ end }}

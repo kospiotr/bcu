@@ -42,3 +42,10 @@ docker run -p 1313:1313 \
   hugomods/hugo:exts-0.128.2 \
   hugo server --bind 0.0.0.0
 ```
+
+# Vendor assets
+
+Downloads all vendor assets like Bootstrap into _vendor directory so that you can introspect API. Very useful for extending SCSS with bootstrap extensions.
+```bash
+hugo mod vendor
+```
