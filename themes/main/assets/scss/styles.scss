@@ -88,7 +88,7 @@ main{
         }
         > .wrapper-left{
             @include media-breakpoint-up(xl) {
-                text-align: right;
+//                 text-align: right;
             }
         }
         > .wrapper-right{
@@ -99,7 +99,7 @@ main{
 
         .text{
             @extend .text-center;
-//             @extend .py-5;
+            @extend .py-5;
             display: inline-block;
             ul {
                 display: inline-block;
@@ -195,11 +195,15 @@ main{
 //         @extend .border;
         align-content: end;
         text-align: right;
+        @extend .d-none;
+        @extend .d-md-block;
     }
     &:nth-child(3){
 //         @extend .border;
         align-content: end;
 //         text-align: center;
+        @extend .d-none;
+        @extend .d-md-block;
     }
 
     }
