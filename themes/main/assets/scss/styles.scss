@@ -13,7 +13,7 @@ $theme-colors: (
 html,body {
   margin: 0;
   padding: 0;
-  scroll-padding-top: 88px;
+  scroll-padding-top: 200px;
   @extend .d-flex;
   @extend .flex-column;
   @extend .h-100;
@@ -36,7 +36,7 @@ main{
 
     &.responsive{
         &.before-scroll{
-            @extend .p-5;
+            @extend .p-3;
             background-color: transparent !important;
             @extend .shadow-none;
 //             padding: 50px 150px 150px 150px !important;
@@ -80,6 +80,8 @@ main{
             align-content: center;
             text-align: center;
             place-items: center;
+            justify-items: center
+
 //             @extend .row;
 //             @extend .w-100;
 
@@ -92,23 +94,17 @@ main{
             }
         }
         > .wrapper-right{
-            @include media-breakpoint-up(xl) {
+            @include media-breakpoint-up(xxl) {
                 place-items: start;
-            }
-        }
+            } }
 
         .text{
-            @extend .text-center;
+            justify-items: center;
             @extend .py-5;
-            display: inline-block;
-            ul {
-                display: inline-block;
-                justify-items: left;
-                list-style: none;
-                padding: 0;
-                > li:before {
-                    content: '✓ ';
-                }
+            > img{
+                @extend .mt-5;
+                display: block;
+
             }
         }
 

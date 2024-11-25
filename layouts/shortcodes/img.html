@@ -1,5 +1,8 @@
 {{ $src := .Get "src" }}
+{{ $size := .Get "size" }}
+
 {{ with resources.Get $src }}
+{{ with .Resize $size }}
 <img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="">
 {{ end }}
-aaaa
+{{ end }}
