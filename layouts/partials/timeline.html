@@ -1,0 +1,5 @@
+<div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
+    {{ range $time_date := . }}
+        {{ partial "timeline-date.html" . }}
+    {{end}}
+</div>

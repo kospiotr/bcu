@@ -39,7 +39,7 @@
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
           {{- end }}
         {{- end -}}
-      >{{ $name }}</a>
+      >{{ .Pre | }}{{ $name }}</a>
       {{- with .Children }}
         <ul class="nav dropdown-menu">
           {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}

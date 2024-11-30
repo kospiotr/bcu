@@ -1,0 +1,18 @@
+{{ define "main" }}
+<div id="posts">
+  <h1 class="py-5">{{ .Title }}</h1>
+  {{ .Content }}
+  <div class="list">
+
+  {{ range .Pages }}
+  <article class="pb-5">
+    <header>
+      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
+      <time>{{ .Date | time.Format ":date_long" }}</time>
+    </header>
+    {{ .Summary }}
+  </article>
+  {{ end }}
+  </div>
+</div>
+{{ end }}

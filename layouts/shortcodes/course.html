@@ -1,0 +1,59 @@
+<div class="card mb-4 shadow">
+    <div class="card-header bg-primary text-white">
+        <h4>{{ .Get "title" }}</h4>
+    </div>
+    <div class="card-body p-md-5">
+        <h5 class="card-title">Informacje podstawowe</h5>
+        <ul>
+            <li>
+                <strong>Wymiar:</strong> {{ .Get "total_hours" }} godzin
+            </li>
+            <li>
+                <strong>Liczba uczestników:</strong> {{ .Get "participants" }}
+            </li>
+        </ul>
+        <h5 class="card-title">Zakres merytoryczny</h5>
+        <ul>
+            <li>
+                <strong>Teoretyczny</strong> ({{ .Get "theory_hours" }}h)
+                <ul>
+                    {{ range $key, $value := .Params }}
+                    {{- if hasPrefix $key "theory_content_" -}}
+                    <li>{{$value}}</li>
+                    {{- end -}}
+                    {{ end }}
+                </ul>
+            </li>
+            <li>
+                <strong>Praktyczny</strong> ({{ .Get "practice_hours" }}h)
+                <ul>
+                    {{ range $key, $value := .Params }}
+                    {{- if hasPrefix $key "practice_content_" -}}
+                    <li>{{$value}}</li>
+                    {{- end -}}
+                    {{ end }}
+                </ul>
+            </li>
+        </ul>
+
+        <h5 class="card-title">Zielona transformacja</h5>
+        <p>{{ .Get "green_transformation" }}</p>
+
+        <h5 class="card-title">Kompetencje cyfrowe</h5>
+        <p>{{ .Get "digital_competences" }}</p>
+
+        <h5 class="card-title">Kwalifikacje szkoleniowców</h5>
+        <ul>
+            {{ range $key, $value := .Params }}
+                {{- if hasPrefix $key "trainer-qualification" -}}
+                <li>{{$value}}</li>
+                {{- end -}}
+            {{ end }}
+        </ul>
+
+        {{- if .Get "recruitment" -}}
+        <h5 class="card-title">Rekrutacja</h5>
+        <p>{{ .Get "recruitment" }}</p>
+        {{- end -}}
+    </div>
+</div>

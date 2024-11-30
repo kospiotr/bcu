@@ -1,0 +1,5 @@
+{{ with $file := getJSON "assets/courses.json" }}
+    {{ range $file := $file }}
+        {{ partial "course.html" . }}
+    {{ end }}
+{{ end }}

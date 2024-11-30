@@ -12,6 +12,8 @@ $theme-colors: (
 @import "navbar";
 @import "footer";
 @import "page_index";
+@import "page_posts";
+@import "timeline";
 
 html,body {
   margin: 0;
@@ -20,4 +22,8 @@ html,body {
   @extend .d-flex;
   @extend .flex-column;
   @extend .h-100;
+}
+
+a:link {
+  text-decoration: none;
 }
