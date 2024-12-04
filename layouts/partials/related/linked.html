@@ -1,12 +1,9 @@
-{{ $relatedFrom := where site.Pages "Params.links" "intersect" (slice .page.Path) }}
-{{ $relatedTo := where site.Pages "Path" "in" .page.Params.links }}
-
-{{ $related := union $relatedFrom $relatedTo }}
-{{ if gt (len $related) 0 }}
-{{ $skip := default 1 .skip }}
-{{ $title := default "Powiązane" .title }}
-
-
+{{- $relatedFrom := where site.Pages "Params.links" "intersect" (slice .page.Path) -}}
+{{- $relatedTo := where site.Pages "Path" "in" .page.Params.links -}}
+{{- $related := union $relatedFrom $relatedTo -}}
+{{- if gt (len $related) 0 -}}
+{{- $skip := default 1 .skip -}}
+{{- $title := default "Powiązane" .title -}}
 <h2>{{ $title }}</h2>
 <div class="row row-cols-1 row-cols-md-4 g-4">
     {{ range $related }}
