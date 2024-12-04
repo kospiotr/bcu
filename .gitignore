@@ -3,4 +3,5 @@
 /assets/jsconfig.json
 .hugo_build.lock
 *.iml
+.idea
 /_vendor/
