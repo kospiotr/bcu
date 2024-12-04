@@ -13,11 +13,10 @@ dateFormat = "2006-12-29"
 
 [[cascade]]
   [cascade._target]
-    section = 'albumy'
-    path = '/albumy/**'
+    section = 'aktualnosci'
+    layout = 'single'
+    path = '/aktualnosci/**'
 
-  [cascade.build]
-    publishResources = false
 
 [[cascade]]
   [cascade._target]

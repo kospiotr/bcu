@@ -1,0 +1,39 @@
+{{ $children := .page.Pages }}
+
+{{ $related :=  $children }}
+{{ if gt (len $related) 0 }}
+{{ $skip := default 1 .skip }}
+{{ $title := default "Powiązane" .title }}
+{{ $noTitle := default false .noTitle }}
+
+{{ if not $noTitle }}
+<h2>{{ $title }}</h2>
+{{ end }}
+<div class="row row-cols-1 row-cols-md-4 g-4">
+    {{ range $index, $item := $related }}
+    <div class="col">
+        <div class="card shadow bg-primary border-0 d-flex justify-content-end card-img position-relative opacity-on-hoover-sm"
+             style="height: 300px">
+            {{- $images := .Resources.ByType "image" -}}
+            {{- $size := "100" -}}
+            {{ if ge (len $images) 4 }}
+            {{ $images = $images | first 4 }}
+            {{- $size = "50" -}}
+            {{ else if ge (len $images) 1 }}
+            {{ $images = $images | first 1 }}
+            {{ end }}
+            {{- range $images -}}
+            {{- $thumbnail := .Resize "300x" -}}
+            <img src="{{ $thumbnail.RelPermalink }}"
+                 alt="..."
+                 class="object-fit-cover opacity-25 w-{{$size}} h-{{$size}}">
+            {{- end }}
+            <a href="{{ .RelPermalink }}"
+               class="text-white h4 position-absolute position-absolute top-50 start-50 translate-middle w-100 p-3 text-center">
+                <h4>{{ $item.Title }}</h4>
+            </a>
+        </div>
+    </div>
+    {{ end }}
+</div>
+{{ end }}

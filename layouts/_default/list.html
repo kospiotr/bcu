@@ -1,18 +1,24 @@
 {{ define "main" }}
-<div id="posts">
-  <h1 class="py-5">{{ .Title }}</h1>
-  {{ .Content }}
-  <div class="list">
-
-  {{ range .Pages }}
-  <article class="pb-5">
-    <header>
-      <h2><a href="{{ .RelPermalink }}">{{ .LinkTitle }}</a></h2>
-      <time>{{ .Date | time.Format ":date_long" }}</time>
+<article class="p-5">
+    <header class="container">
+        {{ partial "breadcrumb.html" . }}
     </header>
-    {{ .Summary }}
-  </article>
-  {{ end }}
-  </div>
-</div>
+    <div class="container bg-white p-5 shadow rounded">
+        {{ .Content }}
+        <div class="row row-cols-1 g-4">
+            {{ range .Pages }}
+            <div class="col">
+                <a href="{{ .Permalink }}">{{ .Title }}</a>
+                <p>{{ .Summary }} ...</p>
+            </div>
+            {{ end }}
+        </div>
+    </div>
+    <div class="container pt-5">
+        {{ partial "related/linked" ( dict "page" . ) }}
+    </div>
+</article>
 {{ end }}
+
+
+

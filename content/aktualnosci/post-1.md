@@ -3,7 +3,8 @@ title = 'Budowa BCU'
 date = 2024-12-01T09:00:00-07:00
 autor = 'Piotr Kosmowski'
 tags = ['red']
-album = '/albumy/2024-10-27-bcu/'
+links=[
+]
 +++
 
 **TESTOWANIE EDYCJI Z POZIOMU GIT_HUB**

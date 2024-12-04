@@ -1,16 +1,10 @@
 {{ define "main" }}
-<div id="posts">
-    <h1 class="py-5">{{ .Title }}</h1>
-    {{ .Content }}
-
-    <div class="row row-cols-1 row-cols-md-4 g-4">
-
-        {{ range .Pages }}
-        <div class="col">
-            {{ partial "course-card.html" . }}
-        </div>
-        {{ end }}
+<article class="p-5">
+    <header class="container">
+        {{ partial "breadcrumb.html" . }}
+    </header>
+    <div class="container bg-white p-5 shadow rounded">
+        {{ partial "related/children" ( dict "page" . "noTitle" true ) }}
     </div>
-
-</div>
+</article>
 {{ end }}

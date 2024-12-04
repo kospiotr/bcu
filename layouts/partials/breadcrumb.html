@@ -1,0 +1,8 @@
+<ol class="breadcrumb">
+    {{- range $index, $item := after 1 .Ancestors.Reverse }}
+    <li class="breadcrumb-item h2 align-content-center">
+        <a href="{{ .RelPermalink }}">{{ $item.Title }}</a>
+    </li>
+    {{- end }}
+    <li class="breadcrumb-item active h2 align-content-center"> {{ .Title }}</li>
+</ol>

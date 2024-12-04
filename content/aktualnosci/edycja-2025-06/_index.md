@@ -1,8 +1,14 @@
 +++
-layout="course-edition"
-title = "Edycja 2025-06"
-timeline_publishing_date="2024-12-01"
-timeline_course_start_date="2025-06-01"
-timeline_course_end_date="2025-07-01"
-
+title = "Anestezjologia i intensywna terapia zwierząt - Edycja 2025-06"
+section = "course-edition"
+date = 2024-12-03
+links=[
+    "/kursy-i-szkolenia/anestezjologia-i-intensywna-terapia-zwierzat",
+    "/kursy-i-szkolenia/anestezjologia-i-intensywna-terapia-zwierzat/edycja-2025-06",
+    "/kursy-i-szkolenia/anestezjologia-i-intensywna-terapia-zwierzat/edycja-2025-07",
+    "/kursy-i-szkolenia/anestezjologia-i-intensywna-terapia-zwierzat/edycja-2025-08",
+    "/kursy-i-szkolenia/anestezjologia-i-intensywna-terapia-zwierzat/edycja-2025-09"
+]
 +++
+
+aaaaa

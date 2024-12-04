@@ -2,49 +2,50 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-  <nav id="navbar_top" class="{{ $page.Param "nav_class" }}">
-      <a class="navbar-brand" href="/">{{ site.Title }}</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse text-white p-lg-3" id="navbarNav">
-        <ul class="navbar-nav ms-auto my-2 my-lg-0">
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      </div>
-  </nav>
+<nav id="navbar_top" class="{{ $page.Param " nav_class" }}">
+<a class="navbar-brand" href="/">{{ site.Title }}</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse text-white p-lg-3" id="navbarNav">
+    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+    </ul>
+</div>
+</nav>
 {{- end }}
 
 {{- define "partials/inline/menu/walk.html" }}
-  {{- $page := .page }}
-  {{- range .menuEntries }}
-    {{- $attrs := dict "href" .URL }}
-    {{- if $page.IsMenuCurrent .Menu . }}
-      {{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "page") }}
-    {{- else if $page.HasMenuCurrent .Menu .}}
-      {{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "true") }}
-    {{- else }}
-      {{- $attrs = merge $attrs (dict "class" "nav-link test") }}
-    {{- end }}
-    {{- $name := .Name }}
-    {{- with .Identifier }}
-      {{- with T . }}
-        {{- $name = . }}
-      {{- end }}
-    {{- end }}
-    <li class="nav-item">
-      <a
-        {{- range $k, $v := $attrs }}
-          {{- with $v }}
+{{- $page := .page }}
+{{- range .menuEntries }}
+{{- $attrs := dict "href" .URL }}
+{{- if $page.IsMenuCurrent .Menu . }}
+{{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "page") }}
+{{- else if $page.HasMenuCurrent .Menu .}}
+{{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "true") }}
+{{- else }}
+{{- $attrs = merge $attrs (dict "class" "nav-link test") }}
+{{- end }}
+{{- $name := .Name }}
+{{- with .Identifier }}
+{{- with T . }}
+{{- $name = . }}
+{{- end }}
+{{- end }}
+<li class="nav-item">
+    <a
+            {{- range $k, $v :=$attrs }}
+            {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
-          {{- end }}
-        {{- end -}}
-      >{{ .Pre | }}{{ $name }}</a>
-      {{- with .Children }}
-        <ul class="nav dropdown-menu">
-          {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-        </ul>
-      {{- end }}
-    </li>
-  {{- end }}
+    {{- end }}
+    {{- end -}}
+    >{{ .Pre | }}{{ $name }}</a>
+    {{- with .Children }}
+    <ul class="nav dropdown-menu">
+        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
+    </ul>
+    {{- end }}
+</li>
+{{- end }}
 {{- end }}
