@@ -1,0 +1,21 @@
+{{ define "main" }}
+<div class="bg-body-secondary p-5">
+    <article id="post" class="container bg-white p-5 shadow rounded">
+        <header class="row">
+        <h1 class="col">{{ .Title }}</h1>
+        <time class="col">{{ .PublishDate | time.Format "2006-01-14"}}</time>
+        <address class="col" rel="author">{{ .Title }}</address>
+        </header>
+        <hr/>
+        {{ .Content }}
+
+        <div class="mt-5">
+            {{ if .Params.album}}
+            {{ with .Site.GetPage .Params.album }}
+            {{ partial "gallery" (dict "page" . ) }}
+            {{ end }}
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}

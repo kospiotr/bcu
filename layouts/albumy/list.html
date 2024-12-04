@@ -1,0 +1,14 @@
+{{ define "main" }}
+<div class="container">
+    {{ $album := . }}
+    <h1 class="py-5">{{ .Title }}</h1>
+    {{ .Content }}
+    {{ range .Pages }}
+    <a href="{{ .RelPermalink }}">
+        <h5>{{ .LinkTitle }}</h5>
+    </a>
+    {{ partial "gallery" (dict "page" . "items" 4) }}
+    {{ end }}
+    {{ partial "gallery" (dict "page" . ) }}
+</div>
+{{ end }}

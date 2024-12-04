@@ -1,0 +1,45 @@
+{{ define "main" }}
+<div class="bg-body-secondary p-5">
+    <article id="post" class="container bg-white p-5 shadow rounded">
+        <header class="breadcrumb">
+            <h4 class="breadcrumb-item"><a href="{{ .Parent.Parent.RelPermalink}}">{{ .Parent.Parent.Title }}</a></h4>
+            <h4 class="breadcrumb-item"><a href="{{ .Parent.RelPermalink}}">{{ .Parent.Title }}</a></h4>
+            <h4 class="breadcrumb-item">{{ .Title }}</h4>
+            </ol>
+        </header>
+        <hr/>
+        <div class="mt-5">
+            {{ partial "timeline.html" ( slice
+            (dict "name" "Ogłoszenie edycji" "date" .Params.timeline_publishing_date)
+            (dict "name" "Rozpoczęcie rekrutacji" "date" .Params.timeline_recruitment_start_date)
+            (dict "name" "Zakończenie rekrutacji" "date" .Params.timeline_recruitment_end_date)
+            (dict "name" "Rozpoczęcie kursu" "date" .Params.timeline_course_start_date)
+            (dict "name" "Zakończenie kursu" "date" .Params.timeline_course_end_date)
+            )}}
+        </div>
+
+        <div class="mt-5">
+            {{ partial "course-content.html" (merge .Parent.Params .Params) }}
+        </div>
+
+        <div class="mt-5">
+            {{ .Content }}
+        </div>
+
+        <div class="mt-5">
+            {{ partial "gallery" (dict "page" . ) }}
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+
+            {{ range .Pages }}
+            <div class="col">
+                {{ partial "course-edition-card" . }}
+            </div>
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}
+
+

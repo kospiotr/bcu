@@ -24,7 +24,7 @@ git push
 ## Native
 
 ```bash
-hugo server
+rm -rf public && rm -rf resources && hugo server
 ```
 
 ## Docker-Compose

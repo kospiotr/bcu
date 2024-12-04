@@ -1,0 +1,33 @@
+{{ define "main" }}
+<div class="bg-body-secondary p-5">
+    <article id="post" class="container bg-white p-5 shadow rounded">
+        <header class="breadcrumb">
+            <h4 class="breadcrumb-item"><a href="{{ .Parent.RelPermalink}}">{{ .Parent.Title }}</a></h4>
+            <h4 class="breadcrumb-item">{{ .Title }}</h4>
+            </ol>
+        </header>
+        <hr/>
+
+        {{ partial "course-content.html" .Params }}
+        {{ .Content }}
+        <div class="mt-5">
+            {{ if .Params.album}}
+            {{ with .Site.GetPage .Params.album }}
+            {{ partial "gallery" (dict "page" . ) }}
+            {{ end }}
+            {{ end }}
+        </div>
+
+        <div class="row row-cols-1 row-cols-md-4 g-4">
+
+            {{ range .Pages }}
+            <div class="col">
+                {{ partial "course-edition-card" . }}
+            </div>
+            {{ end }}
+        </div>
+    </article>
+</div>
+{{ end }}
+
+

@@ -1,0 +1,57 @@
+<div class="d-flex justify-content-center p-5 gap-5">
+    <div class="text-center">
+        <p class="h6 mt-3 mb-1">Czas trwania kursu</p>
+        <p class="h6 text-muted mb-0 mb-lg-0">{{ .total_hours }} godzin</p>
+    </div>
+    <div class="text-center">
+        <p class="h6 mt-3 mb-1">Uczestnicy</p>
+        <p class="h6 text-muted mb-0 mb-lg-0">{{ .participants }}</p>
+    </div>
+</div>
+<h5 class="card-title">Zakres merytoryczny</h5>
+<ul>
+    <li>
+        <strong>Teoretyczny</strong> ({{ .theory_hours }}h)
+        <ul>
+            {{ range $key, $value := . }}
+            {{- if hasPrefix $key "theory_content_" -}}
+            <li>{{$value}}</li>
+            {{- end -}}
+            {{ end }}
+        </ul>
+    </li>
+    <li>
+        <strong>Praktyczny</strong> ({{ .practice_hours }}h)
+        <ul>
+            {{ range $key, $value := . }}
+            {{- if hasPrefix $key "practice_content_" -}}
+            <li>{{$value}}</li>
+            {{- end -}}
+            {{ end }}
+        </ul>
+    </li>
+</ul>
+
+{{ if .green_transformation }}
+<h5 class="card-title">Zielona transformacja</h5>
+<p>{{ .green_transformation }}</p>
+{{ end }}
+
+{{ if .digital_competences }}
+<h5 class="card-title">Kompetencje cyfrowe</h5>
+<p>{{ .digital_competences }}</p>
+{{ end }}
+
+<h5 class="card-title">Kwalifikacje szkoleniowców</h5>
+<ul>
+    {{ range $key, $value := . }}
+    {{- if hasPrefix $key "trainer_qualification" -}}
+    <li>{{$value}}</li>
+    {{- end -}}
+    {{ end }}
+</ul>
+
+{{- if .recruitment -}}
+<h5 class="card-title">Rekrutacja</h5>
+<p>{{ .recruitment }}</p>
+{{- end -}}

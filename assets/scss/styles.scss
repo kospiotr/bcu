@@ -27,3 +27,37 @@ html,body {
 a:link {
   text-decoration: none;
 }
+
+.gallery-image{
+  transition: 0.5s;
+  cursor: pointer;
+  @extend .img-fluid;
+  @extend .rounded;
+  @extend .shadow;
+  &:hover{
+    transform: scale(1.2);
+    @extend .shadow-none;
+  }
+}
+
+.scale-on-hoover-sm{
+  transition: 0.5s;
+  &:hover{
+    z-index: 10;
+    transform: scale(1.1);
+    @extend .shadow-none;
+  }
+
+}
+
+.observable-fade {
+  opacity: 0;
+}
+
+.observable-fade.visible {
+  opacity: 1;
+}
+
+.text-shadow-black{
+  text-shadow: 0 0 20px #000000, 0 0 20px #000000;
+}
