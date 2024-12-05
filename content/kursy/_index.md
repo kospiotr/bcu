@@ -1,3 +1,3 @@
-+++
-title = 'Kursy i Szkolenia'
-+++
+---
+title :  'Kursy i Szkolenia'
+---

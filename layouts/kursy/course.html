@@ -1,0 +1,83 @@
+{{ define "main" }}
+{{ $params := merge .Params .Parent.Params }}
+<article class="p-5">
+    <header class="container">
+        {{ partial "breadcrumb.html" . }}
+    </header>
+    <div class="container bg-white p-5 shadow rounded">
+        <div class="d-flex justify-content-center gap-5">
+            <div class="text-center">
+                <p class="h6 mt-3 mb-1">
+                    {{ with resources.Get "/ico/time.svg" }}{{ .Content | safeHTML }}{{ end }}
+                </p>
+                <p class="h6 mt-3 mb-1">Czas trwania kursu</p>
+                <p class="h6 text-muted mb-0 mb-lg-0">{{ $params.total_hours }} godzin</p>
+            </div>
+            <div class="text-center">
+                <p class="h6 mt-3 mb-1">
+                    {{ with resources.Get "/ico/people.svg" }}{{ .Content | safeHTML }}{{ end }}
+                </p>
+                <p class="h6 mt-3 mb-1">Uczestnicy</p>
+                <p class="h6 text-muted mb-0 mb-lg-0">{{ $params.participants }}</p>
+            </div>
+        </div>
+        <h5 class="card-title pt-5">Zakres merytoryczny</h5>
+        <ul>
+            <li>
+                <strong>Teoretyczny</strong> ({{ $params.theory_hours }}h)
+                <ul>
+                    {{ range $key, $value := $params }}
+                    {{- if hasPrefix $key "theory_content_" -}}
+                    <li>{{$value}}</li>
+                    {{- end -}}
+                    {{ end }}
+                </ul>
+            </li>
+            <li>
+                <strong>Praktyczny</strong> ({{ $params.practice_hours }}h)
+                <ul>
+                    {{ range $key, $value := $params }}
+                    {{- if hasPrefix $key "practice_content_" -}}
+                    <li>{{$value}}</li>
+                    {{- end -}}
+                    {{ end }}
+                </ul>
+            </li>
+        </ul>
+
+        {{ if $params.green_transformation }}
+        <h5 class="card-title">Zielona transformacja</h5>
+        <p>{{ $params.green_transformation }}</p>
+        {{ end }}
+
+        {{ if $params.digital_competences }}
+        <h5 class="card-title">Kompetencje cyfrowe</h5>
+        <p>{{ $params.digital_competences }}</p>
+        {{ end }}
+
+        <h5 class="card-title">Kwalifikacje szkoleniowców</h5>
+        <ul>
+            {{ range $key, $value := $params }}
+            {{- if hasPrefix $key "trainer_qualification" -}}
+            <li>{{$value}}</li>
+            {{- end -}}
+            {{ end }}
+        </ul>
+
+        {{- if $params.recruitment -}}
+        <h5 class="card-title">Rekrutacja</h5>
+        <p>{{ $params.recruitment }}</p>
+        {{- end -}}
+        {{ .Content }}
+        <div class="container pt-5">
+            {{ partial "gallery" (dict "page" . ) }}
+        </div>
+        <div class="container pt-5">
+            {{ partial "related/children" ( dict "page" . "title" "Edycje" ) }}
+        </div>
+        <div class="container pt-5">
+            {{ partial "related/linked" ( dict "page" . ) }}
+        </div>
+    </div>
+</article>
+{{ end }}

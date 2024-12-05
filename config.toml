@@ -20,11 +20,13 @@ dateFormat = "2006-12-29"
 
 [[cascade]]
   [cascade._target]
-    section = 'kursy-i-szkolenia'
-    path = '/kursy-i-szkolenia/**'
+    section = 'kursy'
+    path = '/kursy/**'
 
   [cascade.build]
     publishResources = false
+  [cascade.params]
+    layout = 'course'
 
 [module]
 [module.hugoVersion]
@@ -56,9 +58,9 @@ pageref  = "/o-bcu"
 weight = 20
 
 [[menu.main]]
-identifier = "kursy-i-szkolenia"
+identifier = "kursy"
 name = "Kursy i Szkolenia"
-pageref  = "/kursy-i-szkolenia/"
+pageref  = "/kursy/"
 weight = 30
 
 [[menu.main]]
