@@ -5,3 +5,6 @@
 *.iml
 .idea
 /_vendor/
+
+node_modules
+.env

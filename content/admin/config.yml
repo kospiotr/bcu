@@ -2,8 +2,8 @@ siteId: demo.decapcms.org
 backend:
   name: github
   repo: kospiotr/bcu
-media_folder: static/public
-public_folder: public/
+media_folder: /static/public
+public_folder: /public/
 collections:
   - name: 'posts'
     label: 'Posty'

@@ -1,0 +1,19 @@
+{
+  "name": "bcu",
+  "version": "1.0.0",
+  "description": "- IDE\r - Git\r - Docker",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tinacms": "^2.5.0"
+  },
+  "devDependencies": {
+    "@tinacms/cli": "^1.6.12",
+    "@types/node": "^22.10.1"
+  }
+}
