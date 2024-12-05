@@ -4,10 +4,6 @@ backend:
   repo: kospiotr/bcu
 media_folder: /static/public
 public_folder: /public/
-i18n:
-  structure: single_file
-  locales: [en, pl]
-  default_locale: pl
 slug:
   encoding: "ascii"
   clean_accents: true
@@ -27,12 +23,11 @@ collections:
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-      - { label: 'Gist', name: 'gist', widget: 'gist' }
   - name: 'kursy'
     label: 'Kursy i Szkolenia'
     folder: 'content/kursy'
     create: true
-    slug: '{{slug}}/_index'
+    path: '{{slug}}/_index'
     editor:
       preview: false
     fields:
@@ -64,11 +59,13 @@ collections:
       }
   - name: edycje-kursow
     label: Edycje kursów
-    folder: 'content/edycje-kursow'
+    folder: 'content/kursy'
     create: true
-    slug: '{{kurs}}/{{slug}}/index'
+    path: '{{kurs}}/{{slug}}/index'
+    identifier_field: '{{kurs}}/{{slug}}'
+    summary: "{{kurs}} - {{title}}"
     editor:
-      preview: false
+      preview: true
     fields:
       - { label: 'Tytuł', name: 'title', widget: 'string' }
       - { label: 'Oś czasu', name: 'timeline', widget: 'list', required: false,
