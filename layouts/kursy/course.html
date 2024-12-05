@@ -26,20 +26,16 @@
             <li>
                 <strong>Teoretyczny</strong> ({{ $params.theory_hours }}h)
                 <ul>
-                    {{ range $key, $value := $params }}
-                    {{- if hasPrefix $key "theory_content_" -}}
+                    {{ range $key, $value := $params.theory_content }}
                     <li>{{$value}}</li>
-                    {{- end -}}
                     {{ end }}
                 </ul>
             </li>
             <li>
                 <strong>Praktyczny</strong> ({{ $params.practice_hours }}h)
                 <ul>
-                    {{ range $key, $value := $params }}
-                    {{- if hasPrefix $key "practice_content_" -}}
+                    {{ range $key, $value := $params.theory_content }}
                     <li>{{$value}}</li>
-                    {{- end -}}
                     {{ end }}
                 </ul>
             </li>
@@ -57,10 +53,8 @@
 
         <h5 class="card-title">Kwalifikacje szkoleniowców</h5>
         <ul>
-            {{ range $key, $value := $params }}
-            {{- if hasPrefix $key "trainer_qualification" -}}
+            {{ range $key, $value := $params.trainer_qualifications }}
             <li>{{$value}}</li>
-            {{- end -}}
             {{ end }}
         </ul>
 

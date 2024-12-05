@@ -109,8 +109,17 @@ collections:
     path: '{{kurs}}/{{slug}}/index'
     summary: '{{kurs}} - {{title}}'
     editor:
-      preview: true
+      preview: false
     fields:
+      - label: Kurs
+        name: kurs
+        widget: relation
+        collection: kursy
+        search_fields:
+          - title
+        value_field: title
+        display_fields:
+          - title
       - label: Tytuł
         name: title
         widget: string
@@ -131,12 +140,3 @@ collections:
             name: date
             widget: datetime
             default: "{{now}}"
-      - label: Kurs
-        name: kurs
-        widget: relation
-        collection: kursy
-        search_fields:
-          - title
-        value_field: title
-        display_fields:
-          - title
