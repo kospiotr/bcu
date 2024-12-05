@@ -1,12 +1,6 @@
-
-local_backend:
-  url: http://localhost:1313
 backend:
   name: github
   repo: kospiotr/bcu
-  use_graphql: true
-  site_domain:
-
 media_folder: static/public
 public_folder: public/
 collections:
