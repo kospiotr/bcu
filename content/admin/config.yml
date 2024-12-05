@@ -1,6 +1,7 @@
 backend:
   name: github
   repo: kospiotr/bcu
+  site_id: demo.decapcms.org
 media_folder: static/public
 public_folder: public/
 collections:
