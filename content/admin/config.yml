@@ -4,27 +4,35 @@ backend:
   repo: kospiotr/bcu
 media_folder: /static/public
 public_folder: /public/
+i18n:
+  structure: single_file
+  locales: [en, pl]
+  default_locale: pl
+slug:
+  encoding: "ascii"
+  clean_accents: true
+  sanitize_replacement: "_"
 collections:
-  - name: 'posts'
-    label: 'Posty'
-    folder: 'content/aktualnosci'
+  - name: 'aktualnosci'
+    label: 'Aktualności'
+    folder: 'content/aktualnosci/'
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}/_index'
+    media_folder: ''
+    public_folder: ''
     editor:
       preview: true
     fields:
-      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'title', name: 'title', widget: 'string' }
       - { label: 'Publish Date', name: 'date', widget: 'datetime' }
       - { label: 'Description', name: 'description', widget: 'string' }
       - { label: 'Body', name: 'body', widget: 'markdown' }
-  - name: 'kursy-i-szkolenia'
+      - { label: 'Gist', name: 'gist', widget: 'gist' }
+  - name: 'kursy'
     label: 'Kursy i Szkolenia'
-    folder: 'content/kursy-i-szkolenia'
+    folder: 'content/kursy'
     create: true
-    slug: '{{slug}}'
-    nested:
-      depth: 100 # max depth to show in the collection tree
-      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    slug: '{{slug}}/_index'
     editor:
       preview: false
     fields:
@@ -54,3 +62,24 @@ collections:
       - { label: 'Kwalifikacje trenerów', name: 'trainer_qualifications', widget: 'list', required: false, fields: [
         { label: "Trener", name: "text", widget: "text" } ]
       }
+  - name: edycje-kursow
+    label: Edycje kursów
+    folder: 'content/edycje-kursow'
+    create: true
+    slug: '{{kurs}}/{{slug}}/index'
+    editor:
+      preview: false
+    fields:
+      - { label: 'Tytuł', name: 'title', widget: 'string' }
+      - { label: 'Oś czasu', name: 'timeline', widget: 'list', required: false,
+          fields: [
+            { label: "Etap", name: "text", widget: "string" },
+            { label: "Data", name: "date", widget: "datetime" }
+          ] }
+      - label: "Kurs"
+        name: "kurs"
+        widget: "relation"
+        collection: "kursy"
+        search_fields: [ "title" ]
+        value_field: "title"
+        display_fields: [ "title" ]
