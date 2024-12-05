@@ -1,0 +1,60 @@
+
+local_backend:
+  url: http://localhost:1313
+backend:
+  name: github
+  repo: kospiotr/bcu
+  use_graphql: true
+
+media_folder: static/public
+public_folder: public/
+collections:
+  - name: 'posts'
+    label: 'Posty'
+    folder: 'content/aktualnosci'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    editor:
+      preview: true
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime' }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown' }
+  - name: 'kursy-i-szkolenia'
+    label: 'Kursy i Szkolenia'
+    folder: 'content/kursy-i-szkolenia'
+    create: true
+    slug: '{{slug}}'
+    nested:
+      depth: 100 # max depth to show in the collection tree
+      summary: '{{title}}' # optional summary for a tree node, defaults to the inferred title field
+    editor:
+      preview: false
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - { label: 'Publish Date', name: 'date', widget: 'datetime', required: false }
+      - { label: 'Description', name: 'description', widget: 'string' }
+      - { label: 'Body', name: 'body', widget: 'markdown', required: false }
+      - { label: 'Oś czasu', name: 'timeline', widget: 'list', required: false,
+          fields: [
+            { label: "Etap", name: "text", widget: "string" },
+            { label: "Data", name: "date", widget: "datetime" }
+          ] }
+      - { label: 'Czas trwania w sumie', name: 'total_hours', widget: 'string', required: false }
+      - { label: 'Uczestnicy', name: 'participants', widget: 'string', required: false }
+      - { label: 'Godzin teoretycznych', name: 'theory_hours', widget: 'string', required: false }
+      - { label: 'Zakres teoretyczny', name: 'theory_content', widget: 'list', required: false,
+          fields: [
+            { label: "Trener", name: "text", widget: "text" }
+          ] }
+      - { label: 'Godzin praktycznych', name: 'practice_hours', widget: 'string', required: false }
+      - { label: 'Zakres praktyczny', name: 'practice_content', widget: 'string', required: false,
+          fields: [
+            { label: "Trener", name: "text", widget: "text" }
+          ] }
+      - { label: 'Zielona transformacja', name: 'green_transformation', widget: 'string', required: false }
+      - { label: 'Cyfrowe kompetencje', name: 'digital_competences', widget: 'string', required: false }
+      - { label: 'Kwalifikacje trenerów', name: 'trainer_qualifications', widget: 'list', required: false, fields: [
+        { label: "Trener", name: "text", widget: "text" } ]
+      }
