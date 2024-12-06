@@ -13,7 +13,7 @@ collections:
     label: Aktualności
     folder: content/aktualnosci/
     create: true
-    slug: '{{year}}-{{month}}-{{day}}-{{slug}}/_index'
+    path: '{{year}}-{{month}}-{{day}}-{{slug}}/_index'
     media_folder: ''
     public_folder: ''
     editor:
@@ -26,20 +26,33 @@ collections:
         name: date
         widget: datetime
         default: "{{now}}"
+        format: YYYY-MM-DDTHH:mm:ssZ
       - label: Szkic
         name: draft
         widget: boolean
         default: false
         hint: Zawartość w trybie szkic nie będzie opublikowana.
+      - name: image
+        label: Okładka
+        widget: image
+        required: false
       - label: Treść
         name: body
         widget: markdown
-      - name: images
-        label: Obrazy
+      - name: albums
+        label: Albumy
         widget: list
-        field:
-          label: Obraz
-          widget: image
+        required: false
+        fields:
+          - name: name
+            label: Nazwa Albumu
+            widget: string
+          - name: images
+            label: Obrazy
+            widget: list
+            field:
+              label: Obraz
+              widget: image
   - name: kursy
     label: Kursy i Szkolenia
     folder: content/kursy
@@ -56,6 +69,10 @@ collections:
         widget: boolean
         default: false
         hint: Zawartość w trybie szkic nie będzie opublikowana.
+      - name: image
+        label: Okładka
+        widget: image
+        required: false
       - label: Treść
         name: body
         widget: markdown
@@ -128,6 +145,14 @@ collections:
         widget: boolean
         default: false
         hint: Zawartość w trybie szkic nie będzie opublikowana.
+      - name: image
+        label: Okładka
+        widget: image
+        required: false
+      - label: Treść
+        name: body
+        widget: markdown
+        required: false
       - label: Oś czasu
         name: timeline
         widget: list
@@ -140,3 +165,4 @@ collections:
             name: date
             widget: datetime
             default: "{{now}}"
+            format: YYYY-MM-DD
