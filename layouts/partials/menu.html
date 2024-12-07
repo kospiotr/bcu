@@ -19,28 +19,31 @@
 {{- define "partials/inline/menu/walk.html" }}
 {{- $page := .page }}
 {{- range .menuEntries }}
-{{- $attrs := dict "href" .URL }}
+{{- $attrs := dict "href" .URL "data-toggle" "tooltip" "data-placement" "bottom" "title" .Name -}}
+{{- $class := slice "nav-link" "d-flex" "align-items-center" -}}
 {{- if $page.IsMenuCurrent .Menu . }}
-{{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "page") }}
+{{- $attrs = merge $attrs (dict "aria-current" "page") }}
+{{- $class = $class | append "active" }}
 {{- else if $page.HasMenuCurrent .Menu .}}
-{{- $attrs = merge $attrs (dict "class" "nav-link active" "aria-current" "true") }}
+{{- $attrs = merge $attrs (dict "aria-current" "true") }}
+{{- $class = $class | append "active" }}
 {{- else }}
-{{- $attrs = merge $attrs (dict "class" "nav-link test") }}
 {{- end }}
+{{- $attrs = merge $attrs (dict "class" (delimit $class " ")) }}
 {{- $name := .Name }}
 {{- with .Identifier }}
 {{- with T . }}
 {{- $name = . }}
 {{- end }}
 {{- end }}
-<li class="nav-item">
+<li class="nav-item d-flex justify-content-center">
     <a
             {{- range $k, $v :=$attrs }}
             {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
     {{- end }}
     {{- end -}}
-    >{{ .Pre | }}{{ $name }}</a>
+    >{{ .Pre | }}<span class="nav-item-text">{{ $name }}</span></a>
     {{- with .Children }}
     <ul class="nav dropdown-menu">
         {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}

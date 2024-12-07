@@ -1,11 +1,6 @@
-github.com/FortAwesome/Font-Awesome v0.0.0-20210316185733-d79d85c3fad8/go.mod h1:IUgezN/MFpCDIlFezw3L8j83oeiIuYoj28Miwr/KUYo=
-github.com/FortAwesome/Font-Awesome v4.7.0+incompatible h1:3trjm7NtX5NXlju1AxSWSzedDMq2hsfH78Qtqrc8EgY=
-github.com/FortAwesome/Font-Awesome v4.7.0+incompatible/go.mod h1:IUgezN/MFpCDIlFezw3L8j83oeiIuYoj28Miwr/KUYo=
-github.com/gethugothemes/hugo-modules/icons/font-awesome v0.0.0-20241203025515-30ad48e108af h1:ceZBUvcyPmwtjQd/p3AO8NH+NvqZRbb1x12s8ajBXGE=
-github.com/gethugothemes/hugo-modules/icons/font-awesome v0.0.0-20241203025515-30ad48e108af/go.mod h1:d3gy1vQyfasPmGpau7HpQLrXbOv23PfXclSnjyOBxeU=
+github.com/FortAwesome/font-awesome-sass v0.0.0-20240718183525-f58d556b5bdc h1:2YyCjd1/5grywakI4L+26gej9AUZlroSWhtl7mXDLuU=
+github.com/FortAwesome/font-awesome-sass v0.0.0-20240718183525-f58d556b5bdc/go.mod h1:nEHn6OpiuAeIAe0gQmfhc0LPCvBYEV0JqrcgxIH7iiM=
 github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20200 h1:SmpwwN3DNzJWbV+IT8gaFu07ENUFpCvKou5BHYUKuVs=
 github.com/gohugoio/hugo-mod-bootstrap-scss/v5 v5.20300.20200/go.mod h1:kx8MBj9T7SFR8ZClWvKZPmmUxBaltkoXvnWlZZcSnYA=
 github.com/gohugoio/hugo-mod-jslibs-dist/popperjs/v2 v2.21100.20000/go.mod h1:mFberT6ZtcchrsDtfvJM7aAH2bDKLdOnruUHl0hlapI=
-github.com/hugo-mods/icons v0.0.0-20220508080705-d938a1900b1c h1:BHTy85KaX2uQnC+1i5NRVAxiJNOwpIwQXlY/zpLD6zA=
-github.com/hugo-mods/icons v0.0.0-20220508080705-d938a1900b1c/go.mod h1:sPodUyqumOYz75PKIwmqOYZXLIcLAujn7V9+1Hk4VW8=
 github.com/twbs/bootstrap v5.3.2+incompatible/go.mod h1:fZTSrkpSf0/HkL0IIJzvVspTt1r9zuf7XlZau8kpcY0=

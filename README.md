@@ -48,4 +48,6 @@ docker run -p 1313:1313 \
 Downloads all vendor assets like Bootstrap into _vendor directory so that you can introspect API. Very useful for extending SCSS with bootstrap extensions.
 ```bash
 hugo mod vendor
+hugo mod graph
+hugo mod clean
 ```

@@ -1,0 +1,64 @@
+Title: BCUwDTW ZSPZD
+baseURL: https://bcu.zspzd-technikum.pl/
+languageCode: pl-pl
+params:
+  subtitle1: Branżowe Centrum Umiejętności
+  subtitle2: w dziedzinie Technika Weterynaryjna
+  subtitle3: w Zespole Szkół Centrum Kształcenia Rolniczego
+  subtitle4: Imienia Jadwigi Dziubińskiej
+  subtitle5: w Zduńskiej Dąbrowie
+  dateFormat: 2006-12-29
+cascade:
+  - _target:
+      section: kursy
+      path: /kursy/**
+    build:
+      publishResources: false
+    params:
+      layout: course
+  - _target:
+      section: aktualnosci
+      path: /aktualnosci/**
+    build:
+      publishResources: false
+    params:
+      layout: single
+module:
+  hugoVersion:
+    min: 0.92.0
+  imports:
+    - path: github.com/gohugoio/hugo-mod-bootstrap-scss/v5
+    - path: github.com/FortAwesome/font-awesome-sass
+      mounts:
+        - source: assets/stylesheets
+          target: assets/scss
+        - source: assets/fonts/font-awesome
+          target: static/webfonts
+
+menu:
+  main:
+    - identifier: main
+      name: "Strona Główna"
+      pageref: /
+      pre: '<i class="fa-solid fa-house"></i>'
+      weight: 1
+    - identifier: news
+      name: Aktualności
+      pageref: /aktualnosci/
+      pre: '<i class="fa-solid fa-newspaper"></i>'
+      weight: 10
+    - identifier: kursy
+      name: Kursy
+      pre: '<i class="fa-solid fa-person-chalkboard"></i>'
+      pageref: /kursy/
+      weight: 30
+    - identifier: gallery
+      name: Galeria
+      pageref: /albumy/
+      pre: '<i class="fa-solid fa-image"></i>'
+      weight: 40
+    - identifier: o-nas
+      name: O Nas
+      pageref: /o-nas
+      pre: '<i class="fa-solid fa-info"></i>'
+      weight: 50
