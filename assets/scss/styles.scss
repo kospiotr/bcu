@@ -74,20 +74,3 @@ a:link {
 .text-shadow-black {
   text-shadow: 0 0 20px #000000, 0 0 20px #000000;
 }
-
-.fill-primary {
-
-}
-
-#navbar_top {
-  .nav-link {
-    > i {
-      @extend .pe-2;
-    }
-  }
-
-  .nav-item-text {
-    @extend .d-md-none;
-    @extend .d-xl-block;
-  }
-}

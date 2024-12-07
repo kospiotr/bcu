@@ -40,25 +40,25 @@ menu:
     - identifier: main
       name: "Strona Główna"
       pageref: /
-      pre: '<i class="fa-solid fa-house"></i>'
+      pre: '<i class="fa-solid fa-house pe-2"></i>'
       weight: 1
     - identifier: news
       name: Aktualności
       pageref: /aktualnosci/
-      pre: '<i class="fa-solid fa-newspaper"></i>'
+      pre: '<i class="fa-solid fa-newspaper pe-2"></i>'
       weight: 10
     - identifier: kursy
       name: Kursy
-      pre: '<i class="fa-solid fa-person-chalkboard"></i>'
+      pre: '<i class="fa-solid fa-person-chalkboard pe-2"></i>'
       pageref: /kursy/
       weight: 30
     - identifier: gallery
       name: Galeria
       pageref: /albumy/
-      pre: '<i class="fa-solid fa-image"></i>'
+      pre: '<i class="fa-solid fa-image pe-2"></i>'
       weight: 40
     - identifier: o-nas
       name: O Nas
       pageref: /o-nas
-      pre: '<i class="fa-solid fa-info"></i>'
+      pre: '<i class="fa-solid fa-info pe-2"></i>'
       weight: 50
