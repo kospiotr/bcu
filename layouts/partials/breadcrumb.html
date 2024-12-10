@@ -1,8 +1,12 @@
+{{- $after := default 1 .after -}}
+{{- $showTitle := default true .showTitle -}}
 <ol class="breadcrumb">
-    {{- range $index, $item := after 1 .Ancestors.Reverse }}
+    {{- range $index, $item := after $after .page.Ancestors.Reverse }}
     <li class="breadcrumb-item h2 align-content-center">
         <a href="{{ .RelPermalink }}">{{ $item.Title }}</a>
     </li>
     {{- end }}
-    <li class="breadcrumb-item active h2 align-content-center"> {{ .Title }}</li>
+    {{- if $showTitle -}}
+    <li class="breadcrumb-item active h2 align-content-center"> {{ .page.Title }}</li>
+    {{ end }}
 </ol>

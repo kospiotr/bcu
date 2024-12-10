@@ -1,9 +1,23 @@
 {{ define "main" }}
 <article class="p-5">
-    <header class="container">
-        {{ partial "breadcrumb.html" . }}
-    </header>
+    <nav class="container">
+        {{ partial "breadcrumb" (dict "page" . ) }}
+    </nav>
     <div class="container bg-white p-5 shadow rounded">
+        <header class="pb-3">
+            <h1 class="text-center">{{ .Title }}</h1>
+            <div class="d-flex justify-content-center gap-5">
+                <span><i class="fa fa-user pe-2"></i>{{ default site.Params.AuthorName .Params.AuthorName }}</span>
+                {{ if .Date }}
+                <time><i class="fa fa-calendar pe-2"></i> {{ .Date | dateFormat site.Params.dateFormat }}</time>
+                {{ end }}
+            </div>
+        </header>
+        {{ partial "thumbnail"
+        ( dict
+        "image" (.Resources.Get .Params.image)
+        "class" "img-fluid d-block m-auto float-lg-start me-lg-4 mb-3"
+        ) }}
         {{ .Content }}
         {{ partial "gallery" ( dict "page" . ) }}
     </div>

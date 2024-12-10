@@ -1,6 +1,6 @@
 ---
 title: bbb
-date: 2024-12-06T01:04:00+01:00Z
+date: 2024-12-06T01:04:00+01:00
 draft: false
 image: ""
 albums: []

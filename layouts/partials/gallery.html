@@ -1,16 +1,23 @@
-{{- $images := .page.Resources.ByType "image" -}}
-{{- if .items -}}
-{{- $images = first .items $images -}}
-{{- end -}}
+{{- $page := .page -}}
+{{- $items := .items -}}
+{{- range $page.Params.albums -}}
+<h2>{{ .name }}</h2>
 <div class="row row-cols-1 row-cols-md-2 row-cols-xl-4 g-5 pb-5 text-center">
+    {{- $images := .images -}}
+    {{- if $items -}}
+    {{- $images = first $items $images -}}
+    {{- end -}}
     {{- range $images -}}
-    {{- if eq .MediaType.SubType "svg" -}}
-    {{- else -}}
-    {{- $thumbnail := .Resize "300x" -}}
-    {{- $fullscreen := .Resize "1024x" -}}
     <div class="col">
-        <img src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width }}" height="{{ $thumbnail.Height }}" alt="" class="gallery-image observable-fade">
+        <div class="col">
+            {{ partial "thumbnail"
+            ( dict
+            "page" $page
+            "image" ( $page.Resources.Get . )
+            "class" "gallery-image observable-fade"
+            ) }}
+        </div>
     </div>
     {{ end }}
-    {{- end -}}
 </div>
+{{ end }}

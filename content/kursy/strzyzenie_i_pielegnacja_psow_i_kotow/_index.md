@@ -1,6 +1,7 @@
 ---
 title: Strzyżenie i pielęgnacja psów i kotów
 draft: false
+image: cover.png
 total_hours: "15"
 participants: 30 uczniów
 theory_hours: "7"

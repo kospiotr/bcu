@@ -1,6 +1,6 @@
 ---
-title: ccc
-date: 2024-12-06T01:04:00+01:00Z
+title: ccc2
+date: 2024-12-06T01:04:00
 draft: false
 image: ""
 albums: []

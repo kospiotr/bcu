@@ -19,7 +19,7 @@ $theme-colors: (
 html, body {
   margin: 0;
   padding: 0;
-  scroll-padding-top: 200px;
+  scroll-padding-top: 80px;
   @extend .d-flex;
   @extend .flex-column;
   @extend .h-100;
@@ -55,10 +55,16 @@ a:link {
 }
 
 .opacity-on-hoover-sm {
-  transition: 0.5s;
+  transition: 0.8s;
 
+  img{
+    transition: 0.8s;
+  }
   &:hover {
-    opacity: 0.5;
+    //opacity: 0.5;
+    img{
+      @extend .opacity-75;
+    }
   }
 
 }

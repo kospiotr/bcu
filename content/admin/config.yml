@@ -26,7 +26,7 @@ collections:
         name: date
         widget: datetime
         default: "{{now}}"
-        format: YYYY-MM-DDTHH:mm:ssZ
+        format: YYYY-MM-DDTHH:mm:ss
       - label: Szkic
         name: draft
         widget: boolean
@@ -39,6 +39,9 @@ collections:
       - label: Treść
         name: body
         widget: markdown
+      - label: Tagi
+        name: tags
+        widget: list
       - name: albums
         label: Albumy
         widget: list
@@ -47,6 +50,7 @@ collections:
           - name: name
             label: Nazwa Albumu
             widget: string
+            required: false
           - name: images
             label: Obrazy
             widget: list
@@ -165,4 +169,4 @@ collections:
             name: date
             widget: datetime
             default: "{{now}}"
-            format: YYYY-MM-DD
+            format: YYYY-MM-DDTHH:mm:ss

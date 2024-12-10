@@ -2,34 +2,14 @@
 <article class="pt-5">
 
     <header class="container">
-        {{ partial "breadcrumb.html" . }}
+        {{ partial "breadcrumb" (dict "page" . ) }}
     </header>
     <div class="container">
         {{ .Content }}
-        <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3 g-5">
-            {{ range .Pages }}
-            <div class="col">
-                <div class="bg-white shadow rounded h-100 ">
-                    {{ $cover := .Resources.Get .Params.image }}
-                    <div class="bg-primary rounded-top position-relative" style="height: 100px">
-                        {{ if $cover }}
-                        <img src="{{ $cover.RelPermalink }}"
-                             class="object-fit-cover rounded-top opacity-25 w-100 h-100"
-                             alt="Cover">
-                        {{ end }}
-                        <a href="{{ .Permalink }}" class="position-absolute top-50 start-50 translate-middle text-white  text-center w-100">
-                            <div class="h5">{{ .Title }}</div>
-                            <time class="">{{ .Date | dateFormat "2006-01-02" }}</time>
-                        </a>
-                    </div>
-                    <div class="p-4">
-                        <p class="card-text">Card {{ .Summary }}</p>
-                    </div>
-
-                </div>
-            </div>
-            {{ end }}
-        </div>
+        {{ partial "news-list" .  }}
+        <nav class="d-flex justify-content-center pt-5">
+            {{ template "_internal/pagination.html" . }}
+        </nav>
     </div>
     <div class="container pt-5">
         {{ partial "related/linked" ( dict "page" . ) }}

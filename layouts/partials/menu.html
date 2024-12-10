@@ -2,17 +2,17 @@
 {{- $menuID := .menuID }}
 
 {{- with index site.Menus $menuID }}
-<nav id="navbar_top" class='{{ $page.Param "nav_class" }}'>
-<a class="navbar-brand" href="/">{{ site.Title }}</a>
-<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-        aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-</button>
-<div class="collapse navbar-collapse text-white p-lg-1" id="navbarNav">
-    <ul class="navbar-nav ms-auto my-2 my-lg-0">
-        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
-</div>
+<nav id="menu-{{ $menuID }}" class='navbar {{ $page.Param "nav_class" }}'>
+    <a class="navbar-brand" href="/">{{ site.Title }}</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu-{{ $menuID }}-collapse"
+            aria-controls="menu-{{ $menuID }}-collapse" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse text-white p-lg-1" id="menu-{{ $menuID }}-collapse">
+        <ul class="navbar-nav ms-auto my-2 my-lg-0">
+            {{- partial "inline/menu/walk" (dict "page" $page "menuEntries" .) }}
+        </ul>
+    </div>
 </nav>
 {{- end }}
 
@@ -36,18 +36,21 @@
 {{- $name = . }}
 {{- end }}
 {{- end }}
-<li class="nav-item d-flex justify-content-center">
+<li class="nav-item d-flex">
     <a
             {{- range $k, $v :=$attrs }}
             {{- with $v }}
             {{- printf " %s=%q" $k $v | safeHTMLAttr }}
     {{- end }}
     {{- end -}}
-    >{{ .Pre | }}<span class="nav-item-text">{{ $name }}</span></a>
+    >{{ .Pre | }}<span class="nav-item-text text-center lh-1">{{ $name }}</span></a>
     {{- with .Children }}
-    <ul class="nav dropdown-menu">
-        {{- partial "inline/menu/walk.html" (dict "page" $page "menuEntries" .) }}
-    </ul>
+    <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"></a>
+    <div class="dropdown">
+        <ul class="dropdown-menu">
+            {{- partial "inline/menu/walk" (dict "page" $page "menuEntries" .) }}
+        </ul>
+    </div>
     {{- end }}
 </li>
 {{- end }}

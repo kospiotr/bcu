@@ -1,29 +1,40 @@
-#navbar_top{
-    transition: 0.8s;
-    -webkit-transition:  0.8s;
-    @extend .navbar;
-    @extend .fixed-top;
-    @extend .navbar-dark;
-    @extend .bg-primary;
-    @extend .navbar-expand-md;
-    @extend .px-5;
-    @extend .shadow;
+#menu-main {
+  transition: 0.8s;
+  -webkit-transition: 0.8s;
+  @extend .bg-primary;
+  @extend .fixed-top;
+  @extend .navbar-dark;
+  @extend .navbar-expand-md;
+  @extend .px-5;
+  @extend .shadow;
 
-    &.responsive{
-        &.before-scroll{
-            @extend .p-3;
-            background-color: transparent !important;
-            @extend .shadow-none;
-            font-size: 20px;
-            > .navbar-brand{
-                visibility: hidden;
-            }
-        }
+  .nav-item{
+    @extend .px-2;
+  }
+
+  &.responsive {
+    &.before-scroll {
+      @extend .p-3;
+      background-color: transparent !important;
+      @extend .shadow-none;
+      font-size: 20px;
+
+      > .navbar-brand {
+        visibility: hidden;
+      }
     }
+  }
+
+  //styling dropdown menu
+  .dropdown-menu{
+    @extend .bg-primary;
+    @extend .dropdown-menu-end;
+  }
 }
-#navbarNav.show{
-    > .navbar-nav{
-        @extend .bg-primary;
-        @extend .p-5;
-    }
+
+#navbarNav.show {
+  > .navbar-nav {
+    @extend .bg-primary;
+    @extend .p-5;
+  }
 }

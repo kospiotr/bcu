@@ -1,9 +1,50 @@
 ---
-title: aaaa asdf asdfl asdlaksdj fal;ksdf lkash df; hasdkjlfh aslkjdhf laksjdhf kjash 
+title: Testowy News
 date: 2024-12-06T02:58:00+01:00
 draft: false
 image: freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
-albums: []
+albums:
+  - images:
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49715.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49714.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49712.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49713.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49711.jpeg
+    name: "test"
+  - images:
+      - freepik__candid-image-photography-natural-textures-highly-r__49710.jpeg
+      - freepik__candid-image-photography-natural-textures-highly-r__49709.jpeg
+    name: "test2"
 Date: 2024-12-06T01:04:00+01:00
 ---
 Aperirirutrum class potenti.  Orcimoderatius consequat dicat torquent noluisse scelerisque rutrum himenaeos quaestio homero interpretaris sagittis iaculis error ac curabitur consectetuer.  

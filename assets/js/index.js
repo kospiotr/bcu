@@ -1,10 +1,11 @@
-import Toast from "js/bootstrap/src/toast";
-import Popover from "js/bootstrap/src/popover";
+// import Toast from "js/bootstrap/src/toast";
+// import Popover from "js/bootstrap/src/popover";
 import Collapse from "js/bootstrap/src/collapse";
-import Modal from "js/bootstrap/src/modal";
+// import Modal from "js/bootstrap/src/modal";
+import Dropdown from "js/bootstrap/src/dropdown";
 
 document.addEventListener("DOMContentLoaded", function(){
-    let navbar_top = document.getElementById('navbar_top');
+    let navbar_top = document.getElementById('menu-main');
     let navbar_height = navbar_top.offsetHeight;
     let classList = navbar_top.classList;
     let isResponsive = classList.contains('responsive');

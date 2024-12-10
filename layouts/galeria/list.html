@@ -3,12 +3,13 @@
     {{ $album := . }}
     <h1 class="py-5">{{ .Title }}</h1>
     {{ .Content }}
-    {{ range .Pages }}
+    {{ range site.Pages }}
+    {{ if .Params.albums}}
     <a href="{{ .RelPermalink }}">
-        <h5>{{ .LinkTitle }}</h5>
+        <h5> {{ .Date | dateFormat site.Params.dateFormat }} {{ .LinkTitle }}</h5>
     </a>
-    {{ partial "gallery" (dict "page" . "items" 4) }}
-    {{ end }}
     {{ partial "gallery" (dict "page" . ) }}
+    {{ end }}
+    {{ end }}
 </div>
 {{ end }}

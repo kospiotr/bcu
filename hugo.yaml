@@ -1,13 +1,20 @@
 Title: BCUwDTW ZSPZD
 baseURL: https://bcu.zspzd-technikum.pl/
 languageCode: pl-pl
+timeZone: Europe/Warsaw
 params:
   subtitle1: Branżowe Centrum Umiejętności
   subtitle2: w dziedzinie Technika Weterynaryjna
   subtitle3: w Zespole Szkół Centrum Kształcenia Rolniczego
   subtitle4: Imienia Jadwigi Dziubińskiej
   subtitle5: w Zduńskiej Dąbrowie
-  dateFormat: 2006-12-29
+  dateFormat: "2006-01-02"
+  dateTimeFormat: "2006-01-02 15:04"
+  AuthorName: "BCU"
+
+pagination:
+  pagerSize: 12
+
 cascade:
   - _target:
       section: kursy
@@ -48,17 +55,37 @@ menu:
       pre: '<i class="fa-solid fa-newspaper pe-2"></i>'
       weight: 10
     - identifier: kursy
-      name: Kursy
+      name: Kursy i Szkolenia
       pre: '<i class="fa-solid fa-person-chalkboard pe-2"></i>'
       pageref: /kursy/
       weight: 30
     - identifier: gallery
       name: Galeria
-      pageref: /albumy/
+      pageref: /galeria/
       pre: '<i class="fa-solid fa-image pe-2"></i>'
       weight: 40
     - identifier: o-nas
-      name: O Nas
+      name: O nas
       pageref: /o-nas
       pre: '<i class="fa-solid fa-info pe-2"></i>'
       weight: 50
+    - identifier: KPO
+      name: KPO
+      url: /o-nas#kpo
+      weight: 51
+      parent: o-nas
+    - identifier: bcu
+      name: BCU
+      url: /o-nas#bcu
+      weight: 52
+      parent: o-nas
+    - identifier: location
+      name: Lokalizacja
+      url: /o-nas#location
+      weight: 53
+      parent: o-nas
+    - identifier: contact
+      name: Kontakt
+      url: /o-nas#contact
+      weight: 54
+      parent: o-nas

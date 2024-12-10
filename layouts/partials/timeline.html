@@ -1,13 +1,11 @@
 <div class="timeline-steps aos-init aos-animate" data-aos="fade-up">
-    {{ range $time_date := . }}
-    {{ if .date }}
+    {{ range . }}
     <div class="timeline-step">
         <div class="timeline-content">
             <div class="inner-circle"></div>
             <p class="h6 mt-3 mb-1">{{ .text }}</p>
-            <p class="h6 text-muted mb-0 mb-lg-0">{{ .date }}</p>
+            <time class="h6 text-muted mb-0 mb-lg-0">{{ .date }}</time>
         </div>
     </div>
     {{ end }}
-    {{end}}
 </div>
