@@ -1,7 +1,7 @@
 <div class="row row-cols-1 row-cols-xl-2 row-cols-xxl-3 g-5">
     {{ range (where .Site.AllPages "Type" "aktualnosci") }}
     <div class="col">
-        <div class="bg-white shadow rounded h-100 ">
+        <div class="bg-white shadow-sm rounded h-100 ">
             {{ $cover := .Resources.Get .Params.image }}
             <div class="bg-primary rounded-top position-relative" style="height: 100px">
                 {{ if $cover }}
