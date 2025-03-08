@@ -2,8 +2,8 @@ siteId: demo.decapcms.org
 backend:
   name: github
   repo: kospiotr/bcu
-  site_domain: https://bcu.kospiotr.workers.dev
-  base_url: https://bcu.kospiotr.workers.dev
+  site_domain: https://bcu-amf.pages.dev
+  base_url: https://bcu-amf.pages.dev
   auth_endpoint: /api/auth
 media_folder: /static/public
 public_folder: /public/
