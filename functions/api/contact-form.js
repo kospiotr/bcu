@@ -14,7 +14,12 @@ export async function onRequestPost(context) {
         }
     })
     if (response.ok) {
-        return Response.redirect('/thank-you.html', 301);
+        return new Response(null, {
+            status: 302,
+            headers: {
+                "Location": "/success.html?redirect=/contact.html&msg=Wiadomosc zostala wyslana",
+            },
+        });
     } else {
         return new Response('Error ', {
             status: 500,
