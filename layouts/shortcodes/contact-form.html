@@ -1,9 +1,9 @@
 <h2>Wyślij wiadomość</h2>
 <form method="POST" action="/api/contact-form" class="d-flex flex-column gap-2">
-    <input type="text" class="form-control" id="senderName" name="subject" placeholder="Imię i Nazwisko">
-    <input type="text" class="form-control" id="email" name="subject" placeholder="E-mail" type="email">
-    <input type="text" class="form-control" id="subject" name="subject" placeholder="Temat">
-    <textarea class="form-control" name="body" id="message" rows="3" placeholder="Wiadomość"></textarea>
+    <input type="text" required class="form-control" id="senderName" name="subject" placeholder="Imię i Nazwisko">
+    <input type="email" required class="form-control" id="email" name="subject" placeholder="E-mail">
+    <input type="text" required class="form-control" id="subject" name="subject" placeholder="Temat">
+    <textarea class="form-control" required name="body" id="message" rows="3" placeholder="Wiadomość"></textarea>
     <button type="submit" class="btn btn-primary align-self-center text-white">Wyślij</button>
 </form>
 
