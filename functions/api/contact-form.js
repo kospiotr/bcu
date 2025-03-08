@@ -4,17 +4,23 @@ export async function onRequestPost(context) {
 
         // Convert FormData to JSON
         // NOTE: Allows multiple values per key
-        let output = {};
-        for (let [key, value] of input) {
-            let tmp = output[key];
-            if (tmp === undefined) {
-                output[key] = value;
-            } else {
-                output[key] = [].concat(tmp, value);
-            }
+        // let output = {};
+        // for (let [key, value] of input) {
+        //     let tmp = output[key];
+        //     if (tmp === undefined) {
+        //         output[key] = value;
+        //     } else {
+        //         output[key] = [].concat(tmp, value);
+        //     }
+        // }
+        const out = {
+            _name: input.get('name'),
+            _email: input.get('email'),
+            _subject: input.get('subject'),
+            _message: input.get('message'),
         }
 
-        let pretty = JSON.stringify(output, null, 2);
+        let pretty = JSON.stringify(out, null, 2);
         return new Response(pretty, {
             headers: {
                 "Content-Type": "application/json;charset=utf-8",
