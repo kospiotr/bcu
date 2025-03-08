@@ -1,9 +1,0 @@
-{{ define "main" }}
-<div class="container">
-    {{ $album := . }}
-    <h1 class="py-5">{{ .Title }}</h1>
-    {{ .Content }}
-
-    {{ partial "gallery" (dict "location" .Path ) }}
-</div>
-{{ end }}

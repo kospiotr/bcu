@@ -1,7 +1,0 @@
-{{ $class := default "" .class }}
-{{ $alt := default "image" .alt }}
-{{ $lazy := default true .alt }}
-{{ with .image }}
-{{- $thumbnail := .Resize "300x" -}}
-<img loading="lazy" src="{{ $thumbnail.RelPermalink }}" width="{{ $thumbnail.Width}}" height="{{ $thumbnail.Height}}" alt="{{ $alt }}" class="{{ $class }}"/>
-{{ end }}

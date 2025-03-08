@@ -1,9 +1,0 @@
-{{ $src := .Get "src" }}
-{{ $class := .Get "class" }}
-{{ $size := .Get "size" }}
-
-{{ with resources.Get $src }}
-{{ with .Resize $size }}
-<img src="{{ .RelPermalink }}" width="{{ .Width }}" height="{{ .Height }}" alt="" class="{{ $class }}">
-{{ end }}
-{{ end }}

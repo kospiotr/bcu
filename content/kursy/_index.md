@@ -1,3 +1,0 @@
----
-title :  'Kursy i Szkolenia'
----
