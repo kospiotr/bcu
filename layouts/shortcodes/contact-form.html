@@ -1,8 +1,9 @@
 <h2>Wyślij wiadomość</h2>
-<form data-static-form-name="contact" class="d-flex flex-column gap-2">
-    <input type="text" class="form-control" name="name" placeholder="Imię i Nazwisko">
-    <input type="text" class="form-control" name="subject" placeholder="Temat">
-    <textarea class="form-control" name="message" rows="3" placeholder="Wiadomość"></textarea>
+<form method="POST" action="/api/contact-form" class="d-flex flex-column gap-2">
+    <input type="text" class="form-control" id="senderName" name="subject" placeholder="Imię i Nazwisko">
+    <input type="text" class="form-control" id="email" name="subject" placeholder="E-mail" type="email">
+    <input type="text" class="form-control" id="subject" name="subject" placeholder="Temat">
+    <textarea class="form-control" name="body" id="message" rows="3" placeholder="Wiadomość"></textarea>
     <button type="submit" class="btn btn-primary align-self-center text-white">Wyślij</button>
 </form>
 
