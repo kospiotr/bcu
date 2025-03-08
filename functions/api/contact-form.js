@@ -1,32 +1,24 @@
 export async function onRequestPost(context) {
-    try {
-        let input = await context.request.formData();
+    let input = await context.request.formData();
 
-        // Convert FormData to JSON
-        // NOTE: Allows multiple values per key
-        // let output = {};
-        // for (let [key, value] of input) {
-        //     let tmp = output[key];
-        //     if (tmp === undefined) {
-        //         output[key] = value;
-        //     } else {
-        //         output[key] = [].concat(tmp, value);
-        //     }
-        // }
-        const out = {
-            _name: input.get('name'),
-            _email: input.get('email'),
-            _subject: input.get('subject'),
-            _message: input.get('message'),
+    const response = await fetch('https://formspree.io/f/xblgrwro', {
+        method: 'POST',
+        body: JSON.stringify({
+            name: input.get('name'),
+            email: input.get('email'),
+            subject: input.get('subject'),
+            message: input.get('message'),
+        }),
+        headers: {
+            'Accept': 'application/json'
         }
-
-        let pretty = JSON.stringify(out, null, 2);
-        return new Response(pretty, {
-            headers: {
-                "Content-Type": "application/json;charset=utf-8",
-            },
+    })
+    if (response.ok) {
+        return Response.redirect('/thank-you.html', 301);
+    } else {
+        return new Response('Error ', {
+            status: 500,
         });
-    } catch (err) {
-        return new Response("Error parsing JSON content", { status: 400 });
     }
+
 }
